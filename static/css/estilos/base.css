@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "RobotoCondensed-Bold";
+    src: url("../../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf");
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "RobotoCondensed-Bold";
+}
+
+body{
+    background-color: black;
+    color: white;
+
+}
+
+nav {
+    max-width: 1200px;
+}
+
+header {
+    background-color: #353b48;
+}
+
+nav a {
+    color: white;
+}
+
+nav div ul li a {
+    color: white;
+}
+
+nav .navbar-brand img {
+    width: 70px;
+}

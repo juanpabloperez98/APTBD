@@ -1,4 +1,80 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/main.css' %}">
+{% endblock styles %}
+
 
 {% block content %}
+<section class="mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-7">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quia sapiente. Expedita laudantium
+                doloribus temporibus ullam soluta cupiditate alias dignissimos nulla, mollitia quidem explicabo quos!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quia sapiente. Expedita laudantium
+                doloribus temporibus ullam soluta cupiditate alias dignissimos nulla, mollitia quidem explicabo quos!
+            </p>
+            <div class="container">
+                <a href="#" class="btn">Ir a la teoría</a>
+                <a href="#" class="btn btn-2">ir a los juegos</a>
+            </div>
+        </div>
+        <div class="col-lg-5" id="content-img">
+            <img src="{% static 'Im/UTP.png' %}" alt="" width="100%">
+        </div>
+    </div>
+    <div class="row mx-auto" id="section-games">
+        <div class="col-lg-7">
+            <div class="row mx-auto">
+                <div class="col-lg-6">
+                    <div>
+                        <h1>Juego # 1</h1>
+                        <div>
+                            <img src="../../static/Im/UTP.png" width="60%" alt="imagen-juego">
+                        </div>
+                    </div>
+                    <div class="second-col">
+                        <h1>Juego # 2</h1>
+                        <div>
+                            <img src="../../static/Im/UTP.png" width="60%" alt="imagen-juego">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                        <h1>Juego # 3</h1>
+                        <div>
+                            <img src="../../static/Im/UTP.png" width="60%" alt="imagen-juego">
+                        </div>
+                    </div>
+                    <div class="second-col">
+                        <h1>Juego # 4</h1>
+                        <div>
+                            <img src="../../static/Im/UTP.png" width="60%" alt="imagen-juego">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <h4 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            <p class="mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aspernatur. Ab, delectus! Nostrum,
+                fugiat. Sequi perspiciatis, provident veritatis impedit recusandae nesciunt ex iusto necessitatibus
+                doloremque atque commodi vitae doloribus ullam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aspernatur. Ab, delectus! Nostrum,
+                fugiat. Sequi perspiciatis, provident veritatis impedit recusandae nesciunt ex iusto necessitatibus
+                doloremque atque commodi vitae doloribus ullam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aspernatur. Ab, delectus! Nostrum,
+                fugiat. Sequi perspiciatis, provident veritatis impedit recusandae nesciunt ex iusto necessitatibus
+                doloremque atque commodi vitae doloribus ullam.
+            </p>
+        </div>
+    </div>
+
+</section>
 {% endblock content %}

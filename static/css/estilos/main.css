@@ -1,0 +1,44 @@
+#content-img {
+    padding: 20px;
+}
+
+section {
+    max-width: 1200px;
+    margin: 40px 0px 0px 0px;
+}
+
+.btn{
+    color: white;
+    padding: 10px;
+    width: 150px;
+    border: 1px solid white;
+}
+
+.btn-2{
+    color: white;
+    margin-left: 10px;
+}
+
+#section-games{
+    margin-top: 70px;
+}
+
+#section-games div .row .col-lg-6 div{
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+#section-games div .row .col-lg-6 .second-col{
+    margin-top: 20px;
+}
+
+#section-games div .row .col-lg-6 div h1{
+    font-size: 20px;
+}
+
+#section-games div .row .col-lg-6 div div{
+    text-align: center;
+}
