@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/index_juegos.css' %}">
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="{% url 'main_app:apbtd' %}" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item dropdown" style="margin-right: 0px;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-joystick mr-3" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.106 15.553L.553 12.276A1 1 0 0 1 0 11.382V9.471a1 1 0 0 1 .606-.89L6 6.269v1.088L1 9.5l5.658 2.83a3 3 0 0 0 2.684 0L15 9.5l-5-2.143V6.27l5.394 2.312a1 1 0 0 1 .606.89v1.911a1 1 0 0 1-.553.894l-6.553 3.277a2 2 0 0 1-1.788 0z" />
+                        <path fill-rule="evenodd" d="M7.5 9.5v-6h1v6h-1z" />
+                        <path
+                            d="M10 9.75c0 .414-.895.75-2 .75s-2-.336-2-.75S6.895 9 8 9s2 .336 2 .75zM10 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                    </svg>
+                    Juegos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <a class="dropdown-item" href="#">Menú</a> -->
+                    <a class="dropdown-item disabled" href="#">Juego 1</a>
+                    <a class="dropdown-item" href="#">Juego 2</a>
+                    <a class="dropdown-item" href="#">Juego 3</a>
+                    <a class="dropdown-item" href="#">Juego 4</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-code mr-3"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                        <path
+                            d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                        <path fill-rule="evenodd"
+                            d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                    </svg>Teoría
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                    <a class="dropdown-item" href="#">Teoría 1</a>
+                    <a class="dropdown-item" href="#">Teoría 2</a>
+                    <a class="dropdown-item" href="#">Teoría 3</a>
+                    <a class="dropdown-item" href="#">Teoría 4</a>
+                    <a class="dropdown-item" href="#">Teoría 5</a>
+                    <a class="dropdown-item" href="#">Teoría 6</a>
+                    <a class="dropdown-item" href="#">Teoría 7</a>
+                    <a class="dropdown-item" href="#">Teoría 8</a>
+                    <a class="dropdown-item" href="#">Teoría 9</a>
+                    <a class="dropdown-item" href="#">Teoría 10</a>
+                    <a class="dropdown-item" href="#">Teoría 11</a>
+                    <a class="dropdown-item" href="#">Teoría 12</a>
+                </div>
+            </li>
+            <li class="nav-item" style="--animate-duration: 500ms;" id="li-form">
+                <form action="" id="li-form-form">
+                    <input type="text" placeholder="Palabra clave">
+                </form>
+                <a class="nav-link d-inline-block" id="icon-search" href="#">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                        <path fill-rule="evenodd"
+                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+
+<main>
+    <div class="row mx-auto">
+        <div class="col-lg-6 p-4 contenido">
+            <h1>Nombre del juego # 1</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores repudiandae est porro
+                voluptates fugiat voluptatem nisi molestias aperiam placeat impedit, quidem voluptatibus libero dolore
+                doloribus corrupti accusamus labore. Dolorum vitae modi fugiat tempora repellat amet iure, consequatur
+                ad commodi!
+            </p>
+            <div class="botones">
+                <a href="{% url 'juegos_app:juego1-play' %}" style="background-color: #2180c3;"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                        class="bi bi-joystick mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.106 15.553L.553 12.276A1 1 0 0 1 0 11.382V9.471a1 1 0 0 1 .606-.89L6 6.269v1.088L1 9.5l5.658 2.83a3 3 0 0 0 2.684 0L15 9.5l-5-2.143V6.27l5.394 2.312a1 1 0 0 1 .606.89v1.911a1 1 0 0 1-.553.894l-6.553 3.277a2 2 0 0 1-1.788 0z" />
+                        <path fill-rule="evenodd" d="M7.5 9.5v-6h1v6h-1z" />
+                        <path
+                            d="M10 9.75c0 .414-.895.75-2 .75s-2-.336-2-.75S6.895 9 8 9s2 .336 2 .75zM10 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                    </svg> Jugar</a>
+                <a href="{% url 'juegos_app:juego1-indicaciones' %}" style="background-color: #f9b916;" id="btn-how-play">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-code mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                        <path
+                            d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                        <path fill-rule="evenodd"
+                            d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                    </svg> ¿Como se juega?</a>
+            </div>
+        </div>
+        <div class="col-lg-6 p-4">
+            <div id="imagen">
+                <img src="{% static 'Im/games-port.jpg' %}" alt="imagen-juego" width="100%">
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

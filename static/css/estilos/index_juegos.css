@@ -1,0 +1,35 @@
+main{
+    margin-top: 58px;
+}
+main .row{
+    max-width: 1219px;
+    margin: auto auto auto auto;
+}
+
+main .row div{
+    margin: 70px auto auto auto;
+}
+
+main .row div.contenido h1{
+    text-align: center;
+    margin: 10px auto 30px auto;
+}
+
+main .row div.contenido p{
+    font-family: "RobotoCondensed-Regular"; 
+    padding: 10px;
+}
+
+main .row div.contenido .botones{
+    margin-top: 40px;
+    text-align: left;
+}
+
+main .row div.contenido .botones a{
+    padding: 10px 30px 10px 30px;
+    color: white;
+}
+
+main .row div.contenido .botones a#btn-how-play{
+    /* margin-left: 40px; */
+}

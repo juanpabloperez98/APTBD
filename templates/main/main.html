@@ -7,74 +7,352 @@
 {% endblock styles %}
 
 
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item" style="--animate-duration: 500ms;" id="li-form">
+                <form action="" id="li-form-form">
+                    <input type="text" placeholder="Palabra clave">
+                </form>
+                <a class="nav-link d-inline-block" id="icon-search" href="#">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                        <path fill-rule="evenodd"
+                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="#">Manual
+                    de usuario</a>
+            </li>
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="#">Manual
+                    Tecnico</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
 {% block content %}
-<section class="mx-auto">
+<main>
     <div class="row mx-auto">
-        <div class="col-lg-7">
-            <h1>Lorem ipsum dolor sit.</h1>
+        <div class="col-lg-6 principal-content">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quia sapiente. Expedita laudantium
-                doloribus temporibus ullam soluta cupiditate alias dignissimos nulla, mollitia quidem explicabo quos!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quia sapiente. Expedita laudantium
-                doloribus temporibus ullam soluta cupiditate alias dignissimos nulla, mollitia quidem explicabo quos!
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt fugiat quisquam aperiam qui dicta
+                harum nisi quod, iste, similique atque sed illo ipsam error nobis. Velit odit ipsam voluptate rem
+                officia iure asperiores, incidunt fugit et sit vitae ipsa ex illum nesciunt a pariatur eveniet harum qui
+                molestiae dolor ab reiciendis non dicta tempore. Similique ducimus fugit praesentium doloribus voluptas,
+                repellendus perferendis qui, quas, obcaecati ipsum eveniet cupiditate temporibus sunt.
             </p>
-            <div class="container">
-                <a href="#" class="btn">Ir a la teoría</a>
-                <a href="#" class="btn btn-2">ir a los juegos</a>
+            <div class="main-botones" style="--animate-duration: 500ms;">
+                <a href="#" style="background-color: #2180c3; color: white;">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-joystick mr-3" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.106 15.553L.553 12.276A1 1 0 0 1 0 11.382V9.471a1 1 0 0 1 .606-.89L6 6.269v1.088L1 9.5l5.658 2.83a3 3 0 0 0 2.684 0L15 9.5l-5-2.143V6.27l5.394 2.312a1 1 0 0 1 .606.89v1.911a1 1 0 0 1-.553.894l-6.553 3.277a2 2 0 0 1-1.788 0z" />
+                        <path fill-rule="evenodd" d="M7.5 9.5v-6h1v6h-1z" />
+                        <path
+                            d="M10 9.75c0 .414-.895.75-2 .75s-2-.336-2-.75S6.895 9 8 9s2 .336 2 .75zM10 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                    </svg> Ir a los juegos</a>
+                <a href="#" style="background-color: #f9b916; color: white;" id="teoria">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-code mr-3"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                        <path
+                            d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                        <path fill-rule="evenodd"
+                            d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                    </svg>
+                    Ir a la teoría</a>
             </div>
         </div>
-        <div class="col-lg-5" id="content-img">
-            <img src="{% static 'Im/UTP.png' %}" alt="" width="100%">
+        <div class="col-lg-6" id="second-content">
+            <img class="w-100" src="{% static 'Im/Computer.png' %}" alt="computer">
         </div>
     </div>
-    <div class="row mx-auto" id="section-games">
-        <div class="col-lg-7">
-            <div class="row mx-auto">
-                <div class="col-lg-6">
-                    <div>
-                        <h1>Juego # 1</h1>
-                        <div>
-                            <img src="../../static/Im/UTP.png" width="60%" alt="imagen-juego">
-                        </div>
-                    </div>
-                    <div class="second-col">
-                        <h1>Juego # 2</h1>
-                        <div>
-                            <img src="../../static/Im/UTP.png" width="60%" alt="imagen-juego">
-                        </div>
+</main>
+<section id="section1">
+    <div class="row mx-auto" id="row-section1">
+        <div class="col-lg-12 introduction">
+            <h1>¿Que se va aprender en este software?</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus blanditiis provident pariatur
+                vero omnis excepturi ipsum, nobis quidem incidunt, iste dolor quod placeat totam debitis. Ad impedit
+                voluptatum dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus
+                blanditiis provident pariatur
+                vero omnis excepturi ipsum, nobis quidem incidunt, iste dolor quod placeat totam debitis. Ad impedit
+                voluptatum dignissimos.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="section2">
+    <div class="row mx-auto">
+        <div class="col-lg-12 introduction">
+            <h1 class="text-center">¿Que son los video juegos en esta pagina?</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At reprehenderit provident, voluptates, eum
+                nesciunt earum ipsam expedita, quos molestiae sapiente consequatur vitae saepe tempore quibusdam
+                necessitatibus modi voluptatibus iste veritatis.
+            </p>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-lg-6 text-center">
+                <div class="card">
+                    <img src="{% static 'Im/cuadrocolores.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Juego # 1</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="{% url 'juegos_app:juego1-index' %}" class="btn">Ir al juego</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div>
-                        <h1>Juego # 3</h1>
-                        <div>
-                            <img src="../../static/Im/UTP.png" width="60%" alt="imagen-juego">
-                        </div>
+                <div class="card">
+                    <img src="{% static 'Im/cuadrocolores.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Juego # 2</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="{% url 'juegos_app:juego2-index' %}" class="btn">Ir al juego</a>
                     </div>
-                    <div class="second-col">
-                        <h1>Juego # 4</h1>
-                        <div>
-                            <img src="../../static/Im/UTP.png" width="60%" alt="imagen-juego">
-                        </div>
+                </div>
+                <div class="card">
+                    <img src="{% static 'Im/cuadrocolores.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Juego # 3</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="{% url 'juegos_app:juego3-index' %}" class="btn">Ir al juego</a>
+                    </div>
+                </div>
+                <div class="card ">
+                    <img src="{% static 'Im/cuadrocolores.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Juego # 4</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="{% url 'juegos_app:juego4-index' %}" class="btn">Ir al juego</a>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6" id="image-games-port-content">
+                <img src="{% static 'Im/games-port.png' %}" alt="" width="100%">
+            </div>
         </div>
-        <div class="col-lg-5">
-            <h4 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-            <p class="mt-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aspernatur. Ab, delectus! Nostrum,
-                fugiat. Sequi perspiciatis, provident veritatis impedit recusandae nesciunt ex iusto necessitatibus
-                doloremque atque commodi vitae doloribus ullam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aspernatur. Ab, delectus! Nostrum,
-                fugiat. Sequi perspiciatis, provident veritatis impedit recusandae nesciunt ex iusto necessitatibus
-                doloremque atque commodi vitae doloribus ullam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, aspernatur. Ab, delectus! Nostrum,
-                fugiat. Sequi perspiciatis, provident veritatis impedit recusandae nesciunt ex iusto necessitatibus
-                doloremque atque commodi vitae doloribus ullam.
+    </div>
+</section>
+<section id="slider">
+
+    <div class="row mx-auto">
+        <div class="col-lg-12 introduction" style="margin: 30px auto 30px auto;">
+            <h1>Sobre la practe teorica</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptate sed tempore velit repellendus
+                deserunt perspiciatis optio, porro ex maxime asperiores ducimus aliquid fugiat facilis totam cumque
+                fugit assumenda voluptatem!
             </p>
         </div>
     </div>
 
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <!-- <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol> -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row mx-auto mt-3">
+                    <div class="col-lg-4">
+                        <h3>Teoría # 1</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Teoría # 2</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Teoría # 3</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row mx-auto mt-3">
+                    <div class="col-lg-4">
+                        <h3>Teoría # 4</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Teoría # 5</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Teoría # 6</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="row mx-auto mt-3">
+                    <div class="col-lg-4">
+                        <h3>Teoría # 7</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Teoría # 8</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Teoría # 9</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row mx-auto mt-3">
+                    <div class="col-lg-4">
+                        <h3>Teoría # 10</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Teoría # 11</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Teoría # 12</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al modulo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </section>
 {% endblock content %}
+
+{% block scripts %}
+
+<script>
+    // var abierto = false
+    var close = true
+    $('#icon-search').on('click', function (e) {
+        e.preventDefault()
+    })
+
+    $(window).scroll((e) => {
+        var st = $(this).scrollTop();
+        if (st > 0) {
+            var list_li = document.getElementsByClassName('.li-hidden')
+            for (let i = 0; i < list_li.length; i++) {
+                const element = list_li[i];
+            }
+            $('.li-hidden').addClass('desactivate')
+        } else {
+            var list_li = document.getElementsByClassName('.li-hidden')
+            for (let i = 0; i < list_li.length; i++) {
+                const element = list_li[i];
+            }
+            $('.li-hidden').removeClass('desactivate')
+        }
+    })
+</script>
+
+{% endblock scripts %}

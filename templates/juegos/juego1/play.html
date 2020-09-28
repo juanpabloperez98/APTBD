@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/play1.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <!-- <li class="nav-item" style="--animate-duration: 500ms;" id="li-form">
+                <form action="" id="li-form-form">
+                    <input type="text" placeholder="Palabra clave">
+                </form>
+                <a class="nav-link d-inline-block" id="icon-search" href="#">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                        <path fill-rule="evenodd"
+                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                    </svg>
+                </a>
+            </li> -->
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="{% url 'juegos_app:juego1-index' %}">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main >
+    <div class="row mx-auto">
+        <div class="col-lg-12 text-center">
+            <h2>Juego del triqui</h2>
+            <span id="jug"></span>
+        </div>
+        <div class="col-lg-4">
+            <h3>Información del juego</h3>
+            <p>
+                Jugador 1 - X<br>
+                <span class="span-show">Partdidas ganadas:</span> <span class="span-show" id="player1-win">0</span> <br>
+                <span class="span-show">Partdidas perdidas:</span> <span class="span-show" id="player1-loss">0</span>
+                <br>
+            </p>
+            <hr>
+            <p>
+                Jugador 2 - O<br>
+                <span class="span-show">Partdidas ganadas:</span> <span class="span-show" id="player2-win">0</span> <br>
+                <span class="span-show">Partdidas perdidas:</span> <span class="span-show" id="player2-loss">0</span>
+                <br>
+            </p>
+            <hr>
+            <p>
+                <span class="span-show">Partdidas Jugadas:</span> <span class="span-show" id="partidas-jugadas">0</span>
+            </p>
+        </div>
+        <div class="col-lg-8" id="tablero">
+            <div id="tablero-container">
+                <table class="table">
+                    <tr>
+                        <td data-pos="0"><span id="0"></span></td>
+                        <td data-pos="1"><span id="1"></span></td>
+                        <td data-pos="2"><span id="2"></span></td>
+                    </tr>
+                    <tr>
+                        <td data-pos="3"><span id="3"></span></td>
+                        <td data-pos="4"><span id="4"></span></td>
+                        <td data-pos="5"><span id="5"></span></td>
+                    </tr>
+                    <tr>
+                        <td data-pos="6"><span id="6"></span></td>
+                        <td data-pos="7"><span id="7"></span></td>
+                        <td data-pos="8"><span id="8"></span></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</main>
+{% endblock content %}
+
+
+
+{% block scripts %}
+
+<script>
+
+
+    Swal.fire({
+        title: 'Juego de triqui',
+        confirmButtonText: 'Empezar',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    })
+
+    var jugador = 1
+    $('#jug').text("Jugador 1")
+
+    $('td').on('click', function (e) {
+        var pos = $(this).attr('data-pos')
+        var f = ""
+        if (jugador == 1) {
+            f = "X"
+        } else {
+            f = "O"
+        }
+        $('#' + pos).text(f)
+        if (jugador == 1) {
+            jugador = 2
+            $('#jug').text("Jugador 2")
+        } else {
+            jugador = 1
+            $('#jug').text("Jugador 1")
+        }
+    })
+</script>
+
+{% endblock scripts %}

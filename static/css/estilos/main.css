@@ -1,44 +1,215 @@
-#content-img {
-    padding: 20px;
+main {
+    margin: 130px auto auto auto;
+    z-index: 0;
 }
 
-section {
-    max-width: 1200px;
-    margin: 40px 0px 0px 0px;
+.row {
+    max-width: 1219px;
 }
 
-.btn{
-    color: white;
+main div #second-content::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../Im/RecuadrosTransparencia.png');
+    background-size: cover;
+    background-position: 0px 0px;
+    z-index: -1;
+}
+
+main div .principal-content h1 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+main div .principal-content p {
+    text-align: left;
+    margin-bottom: 40px;
+    font-family: "RobotoCondensed-Regular";
+}
+
+main div .principal-content .main-botones a {
+    border: 1px solid black;
     padding: 10px;
-    width: 150px;
-    border: 1px solid white;
-}
-
-.btn-2{
-    color: white;
-    margin-left: 10px;
-}
-
-#section-games{
-    margin-top: 70px;
-}
-
-#section-games div .row .col-lg-6 div{
-    color: black;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px 0px 10px 0px;
+    display: inline-block;
+    width: 190px;
     text-align: center;
 }
 
-#section-games div .row .col-lg-6 .second-col{
+main div .principal-content .main-botones {
     margin-top: 20px;
 }
 
-#section-games div .row .col-lg-6 div h1{
-    font-size: 20px;
+main div .principal-content .main-botones a#teoria {
+    margin-left: 30px;
 }
 
-#section-games div .row .col-lg-6 div div{
+/* Section1 */
+
+#section1 {
+    margin: 20px auto auto auto;
+    background-color: rgb(233, 233, 233);
+}
+
+#row-section1 div {
+    margin: 30px auto 30px auto;
+}
+
+.introduction h1 {
+    font-size: 35px;
+    text-align: center;
+    margin: auto auto 30px auto;
+}
+
+.introduction p {
+    text-align: left;
+    width: 70%;
+    margin: auto;
+    font-family: "RobotoCondensed-Regular";
+}
+
+/* Section 2 */
+
+#section2 {
+    margin-top: 70px;
+}
+
+#section2 .introduction p {
+    margin-bottom: 50px;
+}
+
+#section2 .card {
+    width: 40%;
+    display: inline-block;
+    /* border: none; */
+    background-color: rgb(248, 248, 248);
+}
+
+#section2 .card .card-body p {
+    text-align: left;
+    font-size: 14px;
+    font-family: "RobotoCondensed-Regular";
+    display: none;
+}
+
+#section2 .card .card-body a {
+    background-color: gray;
+    color: white;
+    border-radius: 0px;
+}
+
+#section2 .card .card-body a:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+#section2 #image-games-port-content img {
+    margin-top: 100px;
+}
+
+/* Section Slider */
+
+#slider {
+    background-color: rgb(233, 233, 233);
+    margin: 30px auto auto auto;
+}
+
+#carouselExampleIndicators{
+    /* background-color: rebeccapurple; */
+    padding-bottom: 30px;
+}
+
+.carousel-inner .carousel-item .row div{
+    padding: 10px;
+}
+
+.carousel-inner .carousel-item .row div h3{
+    font-size: 25px;
     text-align: center;
 }
+.carousel-inner .carousel-item .row div p{
+    font-family: "RobotoCondensed-Regular";
+    width: 70%;
+    margin: auto;
+}
+
+.carousel-inner .carousel-item .row div .boton{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.carousel-inner .carousel-item .row div a{
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    width: 80%;
+    background-color: #2180c3;
+}
+/* #slider .slider {
+    background-color: blue;
+    width: 80%;
+    margin: 30px auto auto auto;
+    max-width: 1219px;
+    overflow: hidden;
+} */
+
+/* #slider .slider ul {
+    display: flex;
+    padding: 0px;
+    background-color: brown;
+    animation: cambio 20s infinite alternate;
+    width: 400%;
+}
+
+#slider .slider ul:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+#slider .slider li {
+    width: 360px;
+    list-style: none;
+    text-align: center;
+    background-color: chartreuse;
+    margin-top: 20px;
+}
+
+#slider .slider li h3{
+    font-size: 25px;
+    margin: 10px auto 10px auto;
+}
+#slider .slider li div{
+    width: 80%;
+    margin: auto;
+}
+#slider .slider li img{
+    width: 100%;
+}
+#slider .slider li p{
+    text-align: left;
+    margin: 20px auto 20px auto;
+}
+#slider .slider li a{
+    background-color: #2180c3;
+    color: white;
+    border-radius: 0px;
+
+} */
+
+/* @keyframes cambio{
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    80%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+} */

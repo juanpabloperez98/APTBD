@@ -2,6 +2,10 @@
     font-family: "RobotoCondensed-Bold";
     src: url("../../fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf");
 }
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: url("../../fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf");
+}
 
 * {
     margin: 0px;
@@ -9,28 +13,72 @@
     font-family: "RobotoCondensed-Bold";
 }
 
+header{
+    background-color: rgb(12.9,12.9,12.9);
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: 2;
+}
+
+header nav{
+    max-width: 1219px !important;
+    margin: auto;
+}
+
+header nav a{
+    color: white;
+}
+
+header nav #main-logo{
+    font-size: 16px;
+}
+
+header nav #main-logo img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.ul-nav li {
+    margin-right: 40px;
+}
+
+.ul-nav li a{
+    font-size: 15px !important;
+}
+
+#li-form form {
+    display: inline-block;
+    --animate-duration: 500ms;
+}
+
+#li-form form input {
+    width: 280px;
+    padding: 3px;
+    border-radius: 10px;
+}
+#li-form form input::placeholder {
+    font-size: 15px;
+    color: rgb(139, 139, 139);
+}
+
+.desactivate {
+    animation:animate__backOutRight;
+    display: none !important;
+}
+
 body{
-    background-color: black;
+    background-color: rgb(248, 248, 248);
+}
+
+footer{
+    background-color: rgb(12.9,12.9,12.9);
+    color: rgb(197, 197, 197);
+    margin-top: 170px;
+
+}
+
+footer a{
     color: white;
-
-}
-
-nav {
-    max-width: 1200px;
-}
-
-header {
-    background-color: #353b48;
-}
-
-nav a {
-    color: white;
-}
-
-nav div ul li a {
-    color: white;
-}
-
-nav .navbar-brand img {
-    width: 70px;
 }

@@ -1,0 +1,22 @@
+main{
+    margin: 140px auto 40vh auto;
+}
+
+main .row{
+    max-width: 1219px;
+}
+
+main .row .col-lg-12{
+    margin-bottom: 50px;
+}
+
+main .row .col-lg-12 h3{
+    text-align: center;
+}
+
+main .row .col-lg-6 p{
+    text-align: left;
+    font-family: "RobotoCondensed-Regular";
+    padding: 10px;
+    margin-top: 40px;
+}
