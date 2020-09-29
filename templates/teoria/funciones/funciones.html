@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/main.css' %}">
+{% endblock styles %}
+
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item" style="--animate-duration: 500ms;" id="li-form">
+                <form action="" id="li-form-form">
+                    <input type="text" placeholder="Palabra clave">
+                </form>
+                <a class="nav-link d-inline-block" id="icon-search" href="#">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                        <path fill-rule="evenodd"
+                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="{% url 'main_app:apbtd' %}">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+
+{% block content %}
+<main>
+    <div class="row mx-auto">
+        <div class="col-lg-6 principal-content">
+            <h1>Funciones</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt fugiat quisquam aperiam qui dicta
+                harum nisi quod, iste, similique atque sed illo ipsam error nobis. Velit odit ipsam voluptate rem
+                officia iure asperiores, incidunt fugit et sit vitae ipsa ex illum nesciunt a pariatur eveniet harum qui
+                molestiae dolor ab reiciendis non dicta tempore. Similique ducimus fugit praesentium doloribus voluptas,
+                repellendus perferendis qui, quas, obcaecati ipsum eveniet cupiditate temporibus sunt.
+            </p>
+        </div>
+        <div class="col-lg-6" id="second-content">
+            <img class="w-100" src="{% static 'Im/Computer.png' %}" alt="computer">
+        </div>
+    </div>
+</main>
+<section id="section1">
+    <div class="row mx-auto" id="row-section1">
+        <div class="col-lg-12 introduction">
+            <h1>Operadores aritméticos</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus blanditiis provident pariatur
+                vero omnis excepturi ipsum, nobis quidem incidunt, iste dolor quod placeat totam debitis. Ad impedit
+                voluptatum dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus
+                blanditiis provident pariatur
+                vero omnis excepturi ipsum, nobis quidem incidunt, iste dolor quod placeat totam debitis. Ad impedit
+                voluptatum dignissimos.
+            </p>
+        </div>
+    </div>
+    <div class="row mx-auto" id="row-section1">
+        <div class="col-lg-6">
+            <div class="col-lg-6" id="second-content">
+                <img class="w-100" src="{% static 'Im/Computer.png' %}" alt="computer">
+            </div>
+        </div>
+        <div class="col-lg-6 introduction">
+            <h1>Sintaxis</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus blanditiis provident pariatur
+                vero omnis excepturi ipsum, nobis quidem incidunt, iste dolor quod placeat totam debitis. Ad impedit
+                voluptatum dignissimos. 
+            </p>
+        </div>
+    </div>
+</section>
+<section id="section2">
+    <div class="row mx-auto">
+        <div class="col-lg-12 introduction">
+            <h1 class="text-center">Operadores lógicos</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At reprehenderit provident, voluptates, eum
+                nesciunt earum ipsam expedita, quos molestiae sapiente consequatur vitae saepe tempore quibusdam
+                necessitatibus modi voluptatibus iste veritatis.
+            </p>
+        </div>
+    </div>
+    <div class="row mx-auto">
+        <div class="col-lg-6 introduction">
+            <h1 class="text-center">Sintaxis</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At reprehenderit provident, voluptates, eum
+                nesciunt earum ipsam expedita, quos molestiae sapiente consequatur vitae saepe tempore quibusdam
+                necessitatibus modi voluptatibus iste veritatis.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <div class="col-lg-6" id="second-content">
+                <img class="w-100" src="{% static 'Im/Computer.png' %}" alt="computer">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="slider">
+
+    <div class="row mx-auto">
+        <div class="col-lg-12 introduction" style="margin: 30px auto 30px auto;">
+            <h1>Ejemplos</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptate sed tempore velit repellendus
+                deserunt perspiciatis optio, porro ex maxime asperiores ducimus aliquid fugiat facilis totam cumque
+                fugit assumenda voluptatem!
+            </p>
+        </div>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <!-- <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol> -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row mx-auto mt-3">
+                    <div class="col-lg-4">
+                        <h3>Ejemplo #1</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al ejemplo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Ejemplo #2</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al ejemplo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Ejemplo #3</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al ejemplo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row mx-auto mt-3">
+                    <div class="col-lg-4">
+                        <h3>Ejemplo #4</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al ejemplo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Ejemplo #5</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al ejemplo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Ejemplo #6</h3>
+                        <hr style="width: 80%; margin: auto;">
+                        <div style="width: 70%; margin: auto;">
+                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
+                        </div>
+                        <div class="boton">
+                            <a href="#">Ir al ejemplo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %}
