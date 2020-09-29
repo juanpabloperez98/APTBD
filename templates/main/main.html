@@ -340,16 +340,8 @@
     $(window).scroll((e) => {
         var st = $(this).scrollTop();
         if (st > 0) {
-            var list_li = document.getElementsByClassName('.li-hidden')
-            for (let i = 0; i < list_li.length; i++) {
-                const element = list_li[i];
-            }
             $('.li-hidden').addClass('desactivate')
         } else {
-            var list_li = document.getElementsByClassName('.li-hidden')
-            for (let i = 0; i < list_li.length; i++) {
-                const element = list_li[i];
-            }
             $('.li-hidden').removeClass('desactivate')
         }
     })
