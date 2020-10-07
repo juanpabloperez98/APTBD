@@ -1,0 +1,324 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/play2.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="{% url 'main_app:apbtd' %}" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="{% url 'juegos_app:juego2-index' %}">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+    <div class="row mx-auto">
+        <div class="col-lg-12">
+            <h2>Juego Adivina la figura</h2>
+            <span id="jug"></span>
+        </div>
+        <div class="col-lg-3">
+            <div class="row mx-auto players" id="section-players">
+                <div class="col-lg-12 player">
+                    <h3>Jugador 1</h3>
+                    <div class="num-bad-cards text-left">
+                        Numero de cartas malas: <span id="carta-mala-j1">0</span>
+                    </div>
+                    <div class="num-good-cards text-left">
+                        Numero de cartas buenas: <span id="carta-buena-j1">0</span>
+                    </div>
+                </div>
+                <div class="col-lg-12 player">
+                    <h3>Jugador 2</h3>
+                    <div class="num-bad-cards text-left">
+                        Numero de cartas malas: <span id="carta-mala-j2">0</span>
+                    </div>
+                    <div class="num-good-cards text-left">
+                        Numero de cartas buenas: <span id="carta-buena-j2">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" id="tablero">
+            <div id="tablero-container">
+                <table class="table">
+                    <tr>
+                        <td data-pos="0" data-img="manzana">
+                            <span id="0">[0 - 0]</span>
+                            <img id="0-img" class="imagen-td desactivate" src="{% static 'Im/juego2/manzana.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="1" data-img="lapiz">
+                            <span id="1">[0 - 1]</span>
+                            <img id="1-img" class="imagen-td desactivate" src="{% static 'Im/juego2/lapiz.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="2" data-img="book">
+                            <span id="2">[0 - 2]</span>
+                            <img id="2-img" class="imagen-td desactivate" src="{% static 'Im/juego2/book.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="3" data-img="pera">
+                            <span id="3">[0 - 3]</span>
+                            <img id="3-img" class="imagen-td desactivate" src="{% static 'Im/juego2/pera.png' %}"
+                                alt="imagen">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-pos="4" data-img="pc">
+                            <span id="4">[1 - 0]</span>
+                            <img id="4-img" class="imagen-td desactivate" src="{% static 'Im/juego2/pc.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="5" data-img="utp">
+                            <span id="5">[1 - 1]</span>
+                            <img id="5-img" class="imagen-td desactivate" src="{% static 'Im/juego2/UTP.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="6" data-img="gafas">
+                            <span id="6">[1 - 2]</span>
+                            <img id="6-img" class="imagen-td desactivate" src="{% static 'Im/juego2/gafas.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="7" data-img="manzana">
+                            <span id="7">[1 - 3]</span>
+                            <img id="7-img" class="imagen-td desactivate" src="{% static 'Im/juego2/manzana.png' %}"
+                                alt="imagen">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-pos="8" data-img="logo">
+                            <span id="8">[2 - 0]</span>
+                            <img id="8-img" class="imagen-td desactivate" src="{% static 'Im/juego2/logo.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="9" data-img="lapiz">
+                            <span id="9">[2 - 1]</span>
+                            <img id="9-img" class="imagen-td desactivate" src="{% static 'Im/juego2/lapiz.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="10" data-img="book">
+                            <span id="10">[2 - 2]</span>
+                            <img id="10-img" class="imagen-td desactivate" src="{% static 'Im/juego2/book.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="11" data-img="pc">
+                            <span id="11">[2 - 3]</span>
+                            <img id="11-img" class="imagen-td desactivate" src="{% static 'Im/juego2/pc.png' %}"
+                                alt="imagen">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-pos="12" data-img="utp">
+                            <span id="12">[3 - 0]</span>
+                            <img id="12-img" class="imagen-td desactivate" src="{% static 'Im/juego2/UTP.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="13" data-img="pera">
+                            <span id="13">[3 - 1]</span>
+                            <img id="13-img" class="imagen-td desactivate" src="{% static 'Im/juego2/pera.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="14" data-img="logo">
+                            <span id="14">[3 - 2]</span>
+                            <img id="14-img" class="imagen-td desactivate" src="{% static 'Im/juego2/logo.png' %}"
+                                alt="imagen">
+                        </td>
+                        <td data-pos="15" data-img="gafas">
+                            <span id="15">[3 - 3]</span>
+                            <img id="15-img" class="imagen-td desactivate" src="{% static 'Im/juego2/gafas.png' %}"
+                                alt="imagen">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-3" style="background-color: rgb(190, 190, 190); height: 351px;">
+            <pre>
+                <code class="language-python">
+<span id="codigo"></span>
+                </code>
+            </pre>
+        </div>
+    </div>
+
+</main>
+{% endblock content %}
+
+
+
+{% block scripts %}
+
+<script>
+
+    var cont = 0,
+        cont_tol = 0,
+        lista_ = [],
+        jugador = 1
+
+
+    $('#jug').text('Jugador 1')
+
+    Swal.fire({
+        title: 'Juego Adivina la figura',
+        confirmButtonText: 'Empezar',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    })
+
+    const modificar_valores_buenos = () => {
+        if (jugador == 1) {
+            var valor = $('#carta-buena-j1').text()
+            valor = parseInt(valor)
+            valor += 1
+            $('#carta-buena-j1').text(valor)
+        } else {
+            var valor = $('#carta-buena-j2').text()
+            valor = parseInt(valor)
+            valor += 1
+            $('#carta-buena-j2').text(valor)
+        }
+    }
+
+    const modificar_valores_malos = () => {
+        if (jugador == 1) {
+            var valor = $('#carta-mala-j1').text()
+            valor = parseInt(valor)
+            valor += 1
+            $('#carta-mala-j1').text(valor)
+        } else {
+            var valor = $('#carta-mala-j2').text()
+            valor = parseInt(valor)
+            valor += 1
+            $('#carta-mala-j2').text(valor)
+        }
+    }
+
+
+    const setTextCode = (pos, cont, img) => {
+        var lista_or = [[0, 0], [0, 1], [0, 2], [0, 3], [1, 0], [1, 1], [1, 2], [1, 3], [2, 0], [2, 1], [2, 2], [2, 3], [3, 0], [3, 1], [3, 2], [3, 3]],
+            pos_ = lista_or[parseInt(pos)]
+        pos_ant = ""
+        if (cont == 1) {
+            document.getElementById('codigo').innerHTML = 'click tablero [' + pos_[0] + '][' + pos_[1] + '] <br><br>Si tablero [' + pos_[0] + '][' + pos_[1] + '] no esta oprimido: <br>    Mostrar imagen<br>Si esta oprimido:<br>    Carta ya escogida<br><br>Carta: ' + img
+            post_ant = img
+        } else {
+            document.getElementById('codigo').innerHTML = 'click tablero [' + pos_[0] + '][' + pos_[1] + '] <br><br>Si tablero [' + pos_[0] + '][' + pos_[1] + '] no esta oprimido: <br>    Mostrar imagen<br>Si esta oprimido:<br>    Carta ya escogida<br><br>Carta: ' + img
+            if (post_ant == img) {
+                document.getElementById('codigo').innerHTML += '<br><br><span style="color: blue">Carta correcta</span>'
+            } else {
+                document.getElementById('codigo').innerHTML += '<br><br><span style="color: red">No son iguales</span>'
+            }
+        }
+    }
+
+    $('td').on('click', function (e) {
+        var pos = $(this).attr('data-pos'),
+            img = $(this).attr('data-img'),
+            pos_span = '#' + pos,
+            pos_img = '#' + pos + '-img'
+
+        if (!$(pos_span).hasClass('active') && cont < 2) {
+            $(pos_span).toggle('fold')
+            $(pos_span).addClass('active') //Para verificar que un campo este activo cuando le vuelvan a dar click
+            $(pos_img).toggle('fold')
+            lista_.push([pos_span, pos_img, img])
+            cont += 1
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Carta ya escogida');
+            msg.delay(1.3)
+        }
+
+        setTextCode(pos, cont, img)
+
+
+
+        if (lista_.length == 2) {
+            // Si es correcto
+            if (lista_[0][2] == lista_[1][2]) {
+                alertify.set('notifier', 'position', 'bottom-center');
+                var msg = alertify.success('Carta correcta');
+                msg.delay(2)
+                cont = 0
+                lista_ = []
+                modificar_valores_buenos()
+                cont_tol += 1
+            } else {
+                alertify.set('notifier', 'position', 'bottom-center');
+                var msg = alertify.error('No son iguales');
+                msg.delay(2)
+                for (let i = 0; i < lista_.length; i++) {
+                    const element = lista_[i];
+                    $(element[0]).toggle('fold')
+                    $(element[0]).removeClass('active')
+                    $(element[1]).toggle('fold')
+                    cont = 0
+                }
+                lista_ = []
+                modificar_valores_malos()
+            }
+            if (jugador == 1) {
+                jugador = 2
+                $('#jug').text('Jugador 2')
+            } else {
+                jugador = 1
+                $('#jug').text('Jugador 1')
+            }
+        }
+
+
+        if (cont_tol == 8) {
+            Swal.fire({
+                title: 'Juego finalizado con extito!!',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            })
+
+
+            for (let i = 0; i < 16; i++) {
+                const element = $('#' + i),
+                    element_img = $('#' + i + '-img')
+                element.toggle('fold')
+                element_img.toggle('fold')
+                element.removeClass('active')
+            }
+
+            $('#codigo').text('')
+
+            $('#carta-mala-j1').text('0')
+            $('#carta-mala-j2').text('0')
+
+            $('#carta-buena-j1').text('0')
+            $('#carta-buena-j2').text('0')
+        }
+    })
+</script>
+
+{% endblock scripts %}

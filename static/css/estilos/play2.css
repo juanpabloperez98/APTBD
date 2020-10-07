@@ -1,0 +1,67 @@
+main {
+    margin-top: 80px;
+}
+
+.desactivate{
+    display: none;
+}
+
+main .row {
+    max-width: 1219px;
+}
+
+main .row .col-lg-12 {
+    text-align: center;
+    margin: 20px auto 40px auto;
+}
+
+main .row .col-lg-12 h2 {
+    font-size: 25px;
+}
+
+#tablero #tablero-container .table tr td {
+    border: 1px solid black;
+    text-align: center;
+    height: 70px;
+}
+
+#tablero #tablero-container .table tr td:hover {
+    background-color: rgb(218, 218, 218);
+    cursor: pointer;
+}
+
+#tablero #tablero-container table tr td span {
+    margin-top: 10px;
+    display: inline-block;
+    font-family: "RobotoCondensed-Regular";
+}
+
+.players{
+    border: 1px solid black;
+    height: 96%;
+}
+
+
+.players .player h3 {
+    font-size: 15px;
+    font-family: "RobotoCondensed-Regular";
+}
+
+.players .num-bad-cards {
+    font-size: 15px;
+    font-family: "RobotoCondensed-Regular";
+
+}
+
+.players .num-good-cards {
+    font-size: 15px;
+    font-family: "RobotoCondensed-Regular";
+}
+
+#codigo{
+    font-family: "RobotoCondensed-Regular";
+}
+
+.imagen-td{
+    width: 34px;
+}

@@ -15,20 +15,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto ul-nav">
-            <!-- <li class="nav-item" style="--animate-duration: 500ms;" id="li-form">
-                <form action="" id="li-form-form">
-                    <input type="text" placeholder="Palabra clave">
-                </form>
-                <a class="nav-link d-inline-block" id="icon-search" href="#">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                        <path fill-rule="evenodd"
-                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                    </svg>
-                </a>
-            </li> -->
             <li class="nav-item li-hidden">
                 <a class="nav-link" style="--animate-duration: 500ms;" href="{% url 'juegos_app:juego1-index' %}">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
@@ -73,23 +59,22 @@
             <div id="tablero-container">
                 <table class="table">
                     <tr>
-                        <td data-pos="0"><span id="0"></span></td>
-                        <td data-pos="1"><span id="1"></span></td>
-                        <td data-pos="2"><span id="2"></span></td>
+                        <td data-pos="0"><span id="0">[0 - 0]</span></td>
+                        <td data-pos="1"><span id="1">[0 - 1]</span></td>
+                        <td data-pos="2"><span id="2">[0 - 2]</span></td>
                     </tr>
                     <tr>
-                        <td data-pos="3"><span id="3"></span></td>
-                        <td data-pos="4"><span id="4"></span></td>
-                        <td data-pos="5"><span id="5"></span></td>
+                        <td data-pos="3"><span id="3">[1 - 0]</span></td>
+                        <td data-pos="4"><span id="4">[1 - 1]</span></td>
+                        <td data-pos="5"><span id="5">[1 - 2]</span></td>
                     </tr>
                     <tr>
-                        <td data-pos="6"><span id="6"></span></td>
-                        <td data-pos="7"><span id="7"></span></td>
-                        <td data-pos="8"><span id="8"></span></td>
+                        <td data-pos="6"><span id="6">[2 - 0]</span></td>
+                        <td data-pos="7"><span id="7">[2 - 1]</span></td>
+                        <td data-pos="8"><span id="8">[2 - 2]</span></td>
                     </tr>
                 </table>
             </div>
-
         </div>
         <div class="col-lg-2" style="background-color: rgb(190, 190, 190);">
             <pre>
@@ -172,7 +157,7 @@
         } else if (parseInt(pos) >= 6 && parseInt(pos) <= 8) {
             fila = 2
         }
-        if ($('#' + pos).text() != "") {
+        if ($('#' + pos).text() == "X" || $('#' + pos).text() == "O") {
             alertify.set('notifier', 'position', 'bottom-center');
             alertify.error('Posición ocupada');
             document.getElementById('codigo').innerHTML = 'si matriz [' + fila + '][' + columna + '] esta libre<br>      entonces: imprimir ' + f + '<br>sino entonces: <br>      imprimir posición ocupada <br><br> Posición ocupada!!'

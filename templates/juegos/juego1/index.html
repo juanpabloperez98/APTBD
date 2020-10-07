@@ -31,8 +31,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <!-- <a class="dropdown-item" href="#">Menú</a> -->
                     <a class="dropdown-item disabled" href="#">Juego 1</a>
-                    <a class="dropdown-item" href="#">Juego 2</a>
-                    <a class="dropdown-item" href="#">Juego 3</a>
+                    <a class="dropdown-item" href="{% url 'juegos_app:juego2-index' %}">Juego 2</a>
+                    <a class="dropdown-item" href="{% url 'juegos_app:juego3-index' %}">Juego 3</a>
                     <a class="dropdown-item" href="#">Juego 4</a>
                 </div>
             </li>
@@ -119,7 +119,7 @@
         </div>
         <div class="col-lg-6 p-4">
             <div id="imagen">
-                <img src="{% static 'Im/games-port.jpg' %}" alt="imagen-juego" width="100%">
+                <img src="{% static 'Im/juego1/juego1.png' %}" alt="imagen-juego" width="100%">
             </div>
         </div>
     </div>

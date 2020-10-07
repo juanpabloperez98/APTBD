@@ -26,6 +26,7 @@ main .row #tablero #tablero-container table tr td{
 }
 main .row #tablero #tablero-container table tr td:hover{
     background-color: rgb(218, 218, 218);
+    cursor: pointer;
 }   
 main .row #tablero #tablero-container table tr td span{
     margin-top: 26px;

@@ -65,7 +65,7 @@ header nav #main-logo img {
 
 .desactivate {
     animation:animate__backOutRight;
-    display: none !important;
+    display: none;
 }
 
 body{
