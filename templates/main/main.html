@@ -112,9 +112,9 @@
         <div class="row mx-auto">
             <div class="col-lg-6 text-center">
                 <div class="card">
-                    <img src="{% static 'Im/cuadrocolores.png' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'Im/juego1/juego1.png' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Juego # 1</h5>
+                        <h5 class="card-title">Triqui</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the
                             card's content.</p>
@@ -122,9 +122,9 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="{% static 'Im/cuadrocolores.png' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'Im/juego2/juego2.png' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Juego # 2</h5>
+                        <h5 class="card-title">Adivina la figura</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the
                             card's content.</p>
@@ -132,9 +132,9 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="{% static 'Im/cuadrocolores.png' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'Im/juego3/juego3.png' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Juego # 3</h5>
+                        <h5 class="card-title">Captura las frutas</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the
                             card's content.</p>
@@ -340,16 +340,8 @@
     $(window).scroll((e) => {
         var st = $(this).scrollTop();
         if (st > 0) {
-            var list_li = document.getElementsByClassName('.li-hidden')
-            for (let i = 0; i < list_li.length; i++) {
-                const element = list_li[i];
-            }
             $('.li-hidden').addClass('desactivate')
         } else {
-            var list_li = document.getElementsByClassName('.li-hidden')
-            for (let i = 0; i < list_li.length; i++) {
-                const element = list_li[i];
-            }
             $('.li-hidden').removeClass('desactivate')
         }
     })

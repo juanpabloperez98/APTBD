@@ -23,10 +23,10 @@ main .row #tablero #tablero-container table tr td{
     width: 33%;
     border: 1px solid black;
     height: 100px;
-    
 }
 main .row #tablero #tablero-container table tr td:hover{
     background-color: rgb(218, 218, 218);
+    cursor: pointer;
 }   
 main .row #tablero #tablero-container table tr td span{
     margin-top: 26px;
@@ -35,4 +35,13 @@ main .row #tablero #tablero-container table tr td span{
 }
 .span-show{
     font-family: "RobotoCondensed-Regular";
+}
+#codigo{
+    font-family: "RobotoCondensed-Regular";
+}
+main .row #tablero #tablero-container table tr td span.X{
+    color: #2180c3;
+}
+main .row #tablero #tablero-container table tr td span.O{
+    color: #f9b916;
 }

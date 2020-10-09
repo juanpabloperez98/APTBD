@@ -30,9 +30,9 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <!-- <a class="dropdown-item" href="#">Menú</a> -->
-                    <a class="dropdown-item" href="#">Juego 1</a>
-                    <a class="dropdown-item disabled" href="#">Juego 2</a>
-                    <a class="dropdown-item" href="#">Juego 3</a>
+                    <a class="dropdown-item" href="{% url 'juegos_app:juego1-index' %}">Juego Triqui</a>
+                    <a class="dropdown-item disabled" href="#">Juego Adivina la figura</a>
+                    <a class="dropdown-item" href="{% url 'juegos_app:juego3-index' %}">Juego Captura las frutas</a>
                     <a class="dropdown-item" href="#">Juego 4</a>
                 </div>
             </li>
@@ -89,7 +89,7 @@
 <main>
     <div class="row mx-auto">
         <div class="col-lg-6 p-4 contenido">
-            <h1>Nombre del juego # 2</h1>
+            <h1>Juego Adivina la figura</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis maiores repudiandae est porro
                 voluptates fugiat voluptatem nisi molestias aperiam placeat impedit, quidem voluptatibus libero dolore
@@ -97,7 +97,7 @@
                 ad commodi!
             </p>
             <div class="botones">
-                <a href="#" style="background-color: #2180c3;"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                <a href="{% url 'juegos_app:juego2-play' %}" style="background-color: #2180c3;"><svg width="1em" height="1em" viewBox="0 0 16 16"
                         class="bi bi-joystick mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M7.106 15.553L.553 12.276A1 1 0 0 1 0 11.382V9.471a1 1 0 0 1 .606-.89L6 6.269v1.088L1 9.5l5.658 2.83a3 3 0 0 0 2.684 0L15 9.5l-5-2.143V6.27l5.394 2.312a1 1 0 0 1 .606.89v1.911a1 1 0 0 1-.553.894l-6.553 3.277a2 2 0 0 1-1.788 0z" />
@@ -105,7 +105,7 @@
                         <path
                             d="M10 9.75c0 .414-.895.75-2 .75s-2-.336-2-.75S6.895 9 8 9s2 .336 2 .75zM10 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
                     </svg> Jugar</a>
-                <a href="#" style="background-color: #f9b916;" id="btn-how-play">
+                <a href="{% url 'juegos_app:juego2-indicaciones' %}" style="background-color: #f9b916;" id="btn-how-play">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-code mr-2"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -119,7 +119,7 @@
         </div>
         <div class="col-lg-6 p-4">
             <div id="imagen">
-                <img src="{% static 'Im/games-port.jpg' %}" alt="imagen-juego" width="100%">
+                <img src="{% static 'Im/juego2/juego2.png' %}" alt="imagen-juego" width="100%">
             </div>
         </div>
     </div>

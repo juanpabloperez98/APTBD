@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/play3.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="{% url 'main_app:apbtd' %}" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="{% url 'juegos_app:juego3-index' %}">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+
+<main>
+    <div class="row mx-auto">
+        <div class="col-lg-12" id="title">
+            <h2>Juego captura las frutas</h2>
+        </div>
+        <div class="col-lg-3" id="date-game">
+            <div class="contenedor">
+                <h3>Datos del juego</h3>
+                <span id="time"></span> <br>
+                <span id="puntos"></span> <br>
+                <span id="maximo">Maximo puntos: 15</span> <br>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="contenedor">
+                <div id="player"></div>
+                <div id="fruit">
+                    <img src="{% static 'Im/juego3/pera.png' %}" alt="pera">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="contenedor codigo">
+                <pre>
+                    <code class="language-python">
+<span id="codigo"></span>
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="col-lg-12 text-center">
+            <div class="botones">
+                <button id="left">
+                    <img class="arrows" src="{% static 'Im/juego3/arrow-left.png' %}" alt="arrow-lef">
+                </button>
+                <button id="up">
+                    <img class="arrows" src="{% static 'Im/juego3/arrow-up.png' %}" alt="arrow-up">
+                </button>
+                <button id="down">
+                    <img class="arrows" src="{% static 'Im/juego3/arrow-down.png' %}" alt="arrow-up">
+                </button>
+                <button id="right">
+                    <img class="arrows" src="{% static 'Im/juego3/arrow-right.png' %}" alt="arrow-right">
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}
+
+
+
+{% block scripts %}
+
+<script>
+    var x = 0,
+        y = 0,
+        puntos = 0,
+        time = 60,
+        moveX = Math.round(Math.random() * 533),
+        moveY = Math.round(Math.random() * 351)
+
+    $('#puntos').text('Puntos: 0')
+
+    $('#fruit').css('margin-left', moveX + 'px');
+    $('#fruit').css('margin-top', moveY + 'px');
+
+
+    Swal.fire({
+        title: 'Juego captura las frutas',
+        confirmButtonText: 'Empezar',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    })
+
+
+
+
+    // console.log(moveX,moveY)
+
+    var setTime = () => {
+        time -= 1
+        $('#time').text('Tiempo: ' + time)
+        if (time == 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'El tiempo ha finalizado!',
+                text: 'No haz conseguido capturar todas las frutas!!'
+            })
+            clearInterval(id)
+        }
+    }
+    var id = setInterval(setTime, 1000)
+
+    var TextCode = (movimiento) => {
+        // console.log(x,y)
+        document.getElementById('codigo').innerHTML = 'personaje.' + movimiento + ' <br>personaje.posicion = ' + x + 'x ' + y + 'y<br>fruta.posicion = ' + moveX +'x ' + moveY + 'y'
+
+
+        console.log(x, y)
+
+        if ((x >= moveX - 15 && x <= moveX + 15) && (y > moveY - 15 && y < moveY + 15)) {
+            puntos += 1
+            $('#puntos').text('Puntos: ' + puntos)
+            document.getElementById('codigo').innerHTML += '<br><span style="color:blue">Fruta capturada</span>'
+            alertify.set('notifier', 'position', 'top-center');
+            var msg = alertify.success('Fruta capturada');
+            msg.delay(1.3)
+
+            moveX = Math.round(Math.random() * 533)
+            moveY = Math.round(Math.random() * 351)
+
+            $('#fruit').css('margin-left', moveX + 'px');
+            $('#fruit').css('margin-top', moveY + 'px');
+
+        }
+    }
+
+    var moveRight = () => {
+        if (x < 533) {
+            x += 13
+        }
+        move = x + 'px'
+        $('#player').css('margin-left', move);
+        TextCode('derecha')
+    }
+    var moveLeft = () => {
+        if (x > 0) {
+            x -= 13
+        }
+        move = x + 'px'
+        $('#player').css('margin-left', move);
+        TextCode('izquierda')
+    }
+    var moveDown = () => {
+        if (y < 351) {
+            y += 13
+        }
+        move = y + 'px'
+        $('#player').css('margin-top', move);
+        TextCode('abajo')
+    }
+    var moveUp = () => {
+        if (y > 0) {
+            y -= 13
+        }
+        move = y + 'px'
+        $('#player').css('margin-top', move);
+        TextCode('arriba')
+    }
+    $('#right').on('click', (e) => {
+        e.preventDefault()
+        moveRight()
+    })
+    $('#left').on('click', (e) => {
+        e.preventDefault()
+        moveLeft()
+    })
+    $('#down').on('click', (e) => {
+        e.preventDefault()
+        moveDown()
+    })
+    $('#up').on('click', (e) => {
+        e.preventDefault()
+        moveUp()
+    })
+</script>
+
+{% endblock scripts %}
