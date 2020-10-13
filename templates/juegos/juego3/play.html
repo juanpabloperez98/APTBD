@@ -47,7 +47,8 @@
             <div class="contenedor">
                 <div id="player"></div>
                 <div id="fruit">
-                    <img src="{% static 'Im/juego3/pera.png' %}" alt="pera">
+                    <img id="img1" src="{% static 'Im/juego3/pera.png' %}" alt="pera">
+                    <img id="img2" class="desactivate" src="{% static 'Im/juego3/manzana.png' %}" alt="manzana">
                 </div>
             </div>
         </div>
@@ -89,6 +90,7 @@
     var x = 0,
         y = 0,
         puntos = 0,
+        max_puntos = 10,
         time = 60,
         moveX = Math.round(Math.random() * 533),
         moveY = Math.round(Math.random() * 351)
@@ -111,6 +113,26 @@
     })
 
 
+    if (puntos == max_puntos) {
+
+        Swal.fire({
+            title: 'Lo haz conseguido!!',
+            text: "¿Volver a jugar?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#f9b916',
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.reload()
+            } else {
+                window.history.back();
+            }
+        })
+
+    }
 
 
     // console.log(moveX,moveY)
@@ -122,7 +144,18 @@
             Swal.fire({
                 icon: 'error',
                 title: 'El tiempo ha finalizado!',
-                text: 'No haz conseguido capturar todas las frutas!!'
+                text: "No haz conseguido capturar todas las frutas!! <br> ¿Quieres volver a jugar?",
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#f9b916',
+                confirmButtonText: 'Si',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload()
+                } else {
+                    window.history.back();
+                }
             })
             clearInterval(id)
         }
@@ -131,7 +164,7 @@
 
     var TextCode = (movimiento) => {
         // console.log(x,y)
-        document.getElementById('codigo').innerHTML = 'personaje.' + movimiento + ' <br>personaje.posicion = ' + x + 'x ' + y + 'y<br>fruta.posicion = ' + moveX +'x ' + moveY + 'y'
+        document.getElementById('codigo').innerHTML = 'personaje.' + movimiento + ' <br>personaje.posicion = ' + x + 'x ' + y + 'y<br>fruta.posicion = ' + moveX + 'x ' + moveY + 'y'
 
 
         console.log(x, y)
@@ -149,6 +182,9 @@
 
             $('#fruit').css('margin-left', moveX + 'px');
             $('#fruit').css('margin-top', moveY + 'px');
+
+            $('#img1').toggle()
+            $('#img2').toggle()
 
         }
     }

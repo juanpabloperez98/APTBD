@@ -22,4 +22,6 @@ urlpatterns = [
 
 
     path('juegos/juego4/index',views.juego4_index.as_view(),name = 'juego4-index'),
+    path('juegos/juego4/indicaciones',views.juego4_indicaciones.as_view(),name = 'juego4-indicaciones'),
+    path('juegos/juego4/play',views.juego4_play.as_view(),name = 'juego4-play')
 ]

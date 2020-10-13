@@ -1,0 +1,33 @@
+main .row{
+    max-width: 1219px;    
+    padding-top: 80px !important;
+}
+
+
+/* Imagen */
+#entorno{
+    display: block;
+    margin: 0 auto;
+}
+
+#fondo{
+    opacity: 0.3;
+}
+
+.contenedor.codigo{
+    background-color: rgb(190, 190, 190);
+    height: 100%;
+}
+
+#codigo{
+    font-family: "RobotoCondensed-Regular";
+}
+
+#conte{
+    margin-left: auto;
+}
+
+#contenedor-codigo{
+    margin-right: auto;
+
+}

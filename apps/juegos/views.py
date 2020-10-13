@@ -64,3 +64,10 @@ class juego4_index(TemplateView):
         context = super(TemplateView, self).get_context_data(**kwargs)
         context['game'] = 4
         return context
+
+class juego4_indicaciones(TemplateView):
+    template_name = "juegos/juego4/indicaciones.html"
+
+
+class juego4_play(TemplateView):
+    template_name = "juegos/juego4/play.html"
