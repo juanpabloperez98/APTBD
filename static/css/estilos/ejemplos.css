@@ -19,4 +19,26 @@ main{
 
 .contenedor-enunciado p{
     margin: 0px 0px 30px 0px;
+    font-family: "RobotoCondensed-Regular";
 }
+
+
+/* OPERADORES */
+/* EJMPLOS 1 */
+.form-group.ej1 input{
+    width: 110px;
+    text-align: center;
+}
+
+.form-group input#notes::placeholder{
+    text-align: center;
+    color: rgb(146, 146, 146);
+}
+
+#ejemplo-row{
+    background-color: rgb(240, 240, 240);
+}
+
+/* #content-information p{
+    display: inline-block;
+} */
