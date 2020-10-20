@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplos.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="/operadores#ejemplos">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+
+    <!-- ENUNCIADO -->
+    <div class="row mx-auto" id="enunciado-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            <div class="contenedor-enunciado">
+                <h2>TITULO</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tempore nostrum sunt quaerat libero
+                    aliquam ab harum, fugit aut odit reprehenderit! Tempore, assumenda sint illo ab nemo temporibus
+                    porro aliquid.
+                    +
+                </p>
+                <div class="boton">
+                    <a href="" id="start-btn" class="btn btn-success">
+                        Empezar
+                        <img class="ml-2" src="https://img.icons8.com/material-outlined/24/000000/start.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto desactivate" id="ejemplo-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro magnam eaque nihil. Consectetur explicabo
+            aperiam optio blanditiis? Accusantium dolorem nihil inventore velit mollitia suscipit? Unde voluptatum
+            obcaecati consectetur error harum?
+            Hic accusantium commodi laborum consequuntur animi alias, similique magni! Ipsa modi porro labore quasi
+            eaque accusantium odio nulla dolore, enim nobis fugit fugiat recusandae consectetur, molestiae sunt magnam
+            iste reiciendis!
+            Labore, suscipit! Incidunt doloribus quis qui, officia ullam natus molestias error, earum recusandae cum
+            ducimus nesciunt modi aperiam voluptate sed quaerat veritatis inventore. Totam mollitia corrupti porro
+            deserunt aliquid consequatur?
+            Libero voluptates, exercitationem, ipsam eveniet sit ipsa vitae magnam, repellat distinctio officiis modi
+            dolore voluptatibus velit asperiores? Enim dolorum id, eius odit doloremque, doloribus voluptatum repellat
+            facere delectus, cum earum?
+            Unde, vitae nam exercitationem magni ipsa quo a quos mollitia, cum consequuntur quibusdam soluta repellat
+            hic ex sapiente sequi quaerat nisi dolorem voluptatibus itaque illum! Eum error ducimus facere quam?
+        </div>
+    </div>
+</main>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $('#start-btn').on('click',(e) => {
+        e.preventDefault()
+        $('#enunciado-row').toggle('explode')
+        $('#ejemplo-row').toggle('explode')
+    })
+</script>
+
+    
+{% endblock scripts %}
+    

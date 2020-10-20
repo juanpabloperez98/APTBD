@@ -1,0 +1,22 @@
+main{
+    content: "";
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 150px;
+}
+
+.contenedor-enunciado{
+    width: 60%;
+    margin: 0px auto 0px auto;
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contenedor-enunciado h2{
+    margin: 0px 0px 20px 0px;
+}
+
+.contenedor-enunciado p{
+    margin: 0px 0px 30px 0px;
+}

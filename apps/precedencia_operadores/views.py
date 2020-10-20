@@ -7,4 +7,4 @@ from django.views.generic import(
 
 
 class precedencia_operadores(TemplateView):
-    template_name = "teoria/predencia_operadores/precedencia_operadores.html"
+    template_name = "teoria/precedencia_operadores/precedencia_operadores.html"

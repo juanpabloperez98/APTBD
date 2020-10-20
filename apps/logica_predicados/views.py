@@ -7,4 +7,4 @@ from django.views.generic import(
 
 
 class logica_predicados(TemplateView):
-    template_name = "main/main.html"
+    template_name = "teoria/logica_predicados/logica_predicados.html"

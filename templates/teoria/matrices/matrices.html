@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/estilos/main.css' %}">
 {% endblock styles %}
-
 
 {% block headers %}
 <nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
@@ -43,18 +41,18 @@
 </nav>
 {% endblock headers %}
 
-
 {% block content %}
 <main>
     <div class="row mx-auto">
         <div class="col-lg-6 principal-content">
             <h1>Matrices</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt fugiat quisquam aperiam qui dicta
-                harum nisi quod, iste, similique atque sed illo ipsam error nobis. Velit odit ipsam voluptate rem
-                officia iure asperiores, incidunt fugit et sit vitae ipsa ex illum nesciunt a pariatur eveniet harum qui
-                molestiae dolor ab reiciendis non dicta tempore. Similique ducimus fugit praesentium doloribus voluptas,
-                repellendus perferendis qui, quas, obcaecati ipsum eveniet cupiditate temporibus sunt.
+                Al igual que los vectores, las matrices son un arreglo pero de dos dimensiones que permiten 
+                almacenar datos de un mismo tipo de manera ordenada, en este caso, el orden de los datos es 
+                similar al de una tabla con n filas y m columnas. También, se le asigna una posición a cada 
+                dato llamado indexador que siempre debe de ser un entero positivo y que en este caso, por 
+                ser una matriz se representa como un par de puntos ordenados. Como en los vectores, se debe
+                de tener en cuenta el index desde el cual empieza, ya sea cero (0) o uno (1)
             </p>
         </div>
         <div class="col-lg-6" id="second-content">
@@ -64,19 +62,6 @@
 </main>
 <section id="section1">
     <div class="row mx-auto" id="row-section1">
-        <div class="col-lg-12 introduction">
-            <h1>Operadores aritméticos</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus blanditiis provident pariatur
-                vero omnis excepturi ipsum, nobis quidem incidunt, iste dolor quod placeat totam debitis. Ad impedit
-                voluptatum dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus
-                blanditiis provident pariatur
-                vero omnis excepturi ipsum, nobis quidem incidunt, iste dolor quod placeat totam debitis. Ad impedit
-                voluptatum dignissimos.
-            </p>
-        </div>
-    </div>
-    <div class="row mx-auto" id="row-section1">
         <div class="col-lg-6">
             <div class="col-lg-6" id="second-content">
                 <img class="w-100" src="{% static 'Im/Computer.png' %}" alt="computer">
@@ -85,53 +70,27 @@
         <div class="col-lg-6 introduction">
             <h1>Sintaxis</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum delectus blanditiis provident pariatur
-                vero omnis excepturi ipsum, nobis quidem incidunt, iste dolor quod placeat totam debitis. Ad impedit
-                voluptatum dignissimos. 
+                Aunque para cada lenguaje de programación se tiene una forma diferente de definir una matriz, 
+                por lo general, lo que se hace es declarar el tipo de dato que contendra esta, su nombre
+                y su tamaño deifinido por el número de filas (n) y el número de columnas (m), estos dos datos 
+                se ponen dentro de corchetes independientes. Por otra parte, se debe ir llenando posición a 
+                posición hasta completar el tamaño de la matriz, esto se puede hacer ya sea de forma manual o, 
+                de tal forma que se pueda llenar a medida en que se ejecuta el programa. 
             </p>
-        </div>
-    </div>
-</section>
-<section id="section2">
-    <div class="row mx-auto">
-        <div class="col-lg-12 introduction">
-            <h1 class="text-center">Operadores lógicos</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At reprehenderit provident, voluptates, eum
-                nesciunt earum ipsam expedita, quos molestiae sapiente consequatur vitae saepe tempore quibusdam
-                necessitatibus modi voluptatibus iste veritatis.
-            </p>
-        </div>
-    </div>
-    <div class="row mx-auto">
-        <div class="col-lg-6 introduction">
-            <h1 class="text-center">Sintaxis</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At reprehenderit provident, voluptates, eum
-                nesciunt earum ipsam expedita, quos molestiae sapiente consequatur vitae saepe tempore quibusdam
-                necessitatibus modi voluptatibus iste veritatis.
-            </p>
-        </div>
-        <div class="col-lg-6">
-            <div class="col-lg-6" id="second-content">
-                <img class="w-100" src="{% static 'Im/Computer.png' %}" alt="computer">
-            </div>
         </div>
     </div>
 </section>
 <section id="slider">
-
     <div class="row mx-auto">
         <div class="col-lg-12 introduction" style="margin: 30px auto 30px auto;">
             <h1>Ejemplos</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptate sed tempore velit repellendus
-                deserunt perspiciatis optio, porro ex maxime asperiores ducimus aliquid fugiat facilis totam cumque
-                fugit assumenda voluptatem!
+                En los ejemplos que se muestran a continuación, se presenta la forma en la que se usan e 
+                implementan las matrices para la solución de problemas y para hacer operaciones entre ellas.
+                Además, se explica el paso a paso de la implementación de estas.
             </p>
         </div>
     </div>
-
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <!-- <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
