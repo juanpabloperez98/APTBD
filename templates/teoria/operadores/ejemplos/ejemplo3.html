@@ -1,0 +1,355 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplos.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplo_operadores/ejemplo1.css' %}">
+
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="/operadores#ejemplos">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+
+    <!-- ENUNCIADO -->
+    <div class="row mx-auto" id="enunciado-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            <div class="contenedor-enunciado">
+                <h2>TITULO</h2>
+                <p>
+                    La Universidad Tecnológica de Pereira hace una maratón para hallar grandes talentos. Uno de los
+                    programas que plantea desarrollar la maratón es hallar si la nota de la materia de un alumno es
+                    mayor o superior a 4.0, teniendo en cuenta que son 4 notas con las que se va a trabajar y cada nota
+                    con un peso diferente (porcentaje o valor de la nota).
+                </p>
+                <div class="boton">
+                    <a href="" id="start-btn" class="btn btn-success">
+                        Empezar
+                        <img class="ml-2" src="https://img.icons8.com/material-outlined/24/000000/start.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto desactivate" id="ejercicio-row" style="max-width: 1111px;">
+        <!-- AQUI VA EL CODIGO -->
+        <div class="col-lg-3" id="col-forms">
+            <!-- Numero de productos buenos -->
+            <div id="nota1">
+                <form id="form-nt1">
+                    <div class="form-group ej1 text-center">
+                        <label for="nota1">Nota 1</label>
+                        <input type="text" class="form-control" id="nota1-form" placeholder="Nota 1">
+                        <small id="num_notas" class="form-text text-muted">Ingrese la nota 1</small>
+                    </div>
+                    <div class="bton text-center">
+                        <button type="submit" class="btn btn-success">INGRESAR</button>
+                    </div>
+                </form>
+                <form id="form2-nt1" class="desactivate">
+                    <div class="form-group ej1 text-center">
+                        <label for="peso1">Peso 1</label>
+                        <input type="text" class="form-control" id="peso1" placeholder="e.g 30">
+                        <small id="total_productos" class="form-text text-muted">Ingrese el peso de la nota 1
+                            (30%)</small>
+                    </div>
+                    <div class="bton text-center">
+                        <button type="submit" class="btn btn-success">INGRESAR</button>
+                    </div>
+                </form>
+            </div>
+            <div id="nota2" class="desactivate">
+                <form id="form-nt2">
+                    <div class="form-group ej1 text-center">
+                        <label for="nota1">Nota 2</label>
+                        <input type="text" class="form-control" id="nota2-form" placeholder="Nota 2">
+                        <small id="num_notas" class="form-text text-muted">Ingrese la nota 2</small>
+                    </div>
+                    <div class="bton text-center">
+                        <button type="submit" class="btn btn-success">INGRESAR</button>
+                    </div>
+                </form>
+                <form id="form2-nt2" class="desactivate">
+                    <div class="form-group ej1 text-center">
+                        <label for="peso2">Peso 2</label>
+                        <input type="text" class="form-control" id="peso2" placeholder="e.g 30">
+                        <small id="total_productos" class="form-text text-muted">Ingrese el peso de la nota 2
+                            (30%)</small>
+                    </div>
+                    <div class="bton text-center">
+                        <button type="submit" class="btn btn-success">INGRESAR</button>
+                    </div>
+                </form>
+            </div>
+            <div id="nota3" class="desactivate">
+                <form id="form-nt3">
+                    <div class="form-group ej1 text-center">
+                        <label for="nota1">Nota 3</label>
+                        <input type="text" class="form-control" id="nota3-form" placeholder="Nota 3">
+                        <small id="num_notas" class="form-text text-muted">Ingrese la nota 3</small>
+                    </div>
+                    <div class="bton text-center">
+                        <button type="submit" class="btn btn-success">INGRESAR</button>
+                    </div>
+                </form>
+                <form id="form2-nt3" class="desactivate">
+                    <div class="form-group ej1 text-center">
+                        <label for="peso3">Peso 3</label>
+                        <input type="text" class="form-control" id="peso3" placeholder="e.g 30">
+                        <small id="total_productos" class="form-text text-muted">Ingrese el peso de la nota 3
+                            (30%)</small>
+                    </div>
+                    <div class="bton text-center">
+                        <button type="submit" class="btn btn-success">INGRESAR</button>
+                    </div>
+                </form>
+            </div>
+            <div id="nota4" class="desactivate">
+                <form id="form-nt4">
+                    <div class="form-group ej1 text-center">
+                        <label for="nota1">Nota 4</label>
+                        <input type="text" class="form-control" id="nota4-form" placeholder="Nota 4">
+                        <small id="num_notas" class="form-text text-muted">Ingrese la nota 4</small>
+                    </div>
+                    <div class="bton text-center">
+                        <button type="submit" class="btn btn-success">INGRESAR</button>
+                    </div>
+                </form>
+                <form id="form2-nt4" class="desactivate">
+                    <div class="form-group ej1 text-center">
+                        <label for="peso4">Peso 4</label>
+                        <input type="text" class="form-control" id="peso4" placeholder="e.g 30">
+                        <small id="total_productos" class="form-text text-muted">Ingrese el peso de la nota 4
+                            (30%)</small>
+                    </div>
+                    <div class="bton text-center">
+                        <button type="submit" class="btn btn-success">INGRESAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-3 desactivate" id="col-vars">
+            <p id="contenedor-1" style="font-family: RobotoCondensed-Regular;">
+                Nota 1: <span class="font-weight-bold" id="nota1-span"></span> <br>
+                Peso 1: <span class="font-weight-bold" id="peso1-span"></span></p>
+            </p>
+            <p id="contenedor-2" class="desactivate" style="font-family: RobotoCondensed-Regular;">
+                Nota 2: <span class="font-weight-bold" id="nota2-span"></span> <br>
+                Peso 2: <span class="font-weight-bold" id="peso2-span"></span></p>
+            </p>
+            <p id="contenedor-3" class="desactivate" style="font-family: RobotoCondensed-Regular;">
+                Nota 3: <span class="font-weight-bold" id="nota3-span"></span> <br>
+                Peso 3: <span class="font-weight-bold" id="peso3-span"></span></p>
+            </p>
+            <p id="contenedor-4" class="desactivate" style="font-family: RobotoCondensed-Regular;">
+                Nota 4: <span class="font-weight-bold" id="nota4-span"></span> <br>
+                Peso 4: <span class="font-weight-bold" id="peso4-span"></span></p>
+            </p>
+        </div>
+
+        <div class="col-lg-7 text-center desactivate" id="content-operacion">
+            <p>(Nota 1 * Peso 1) + (Nota 2 * Peso 2) + (Nota 3 * Peso 3) + (Nota 4 * Peso 4) </p>
+            <a href="#" id="showresutl" class="btn btn-success mb-2">Ver resultado</a>
+        </div>
+
+        <div class="col-lg-2 text-center desactivate" id="content-resultado">
+            <h3>RESULTADO</h3>
+            <p id="result"></p>
+        </div>
+
+
+
+        <div class="col-lg-12 desactivate text-center" id="content-reset">
+            <a href="#" id="reiniciar1" class="btn btn-success">
+                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+        </div>
+    </div>
+
+
+</main>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+
+    var lista_notas = [],
+        lista_pesos = [],
+        cont = 0,
+        por = 100
+
+    $('#start-btn').on('click', (e) => {
+        e.preventDefault()
+        // $('#enunciado-row').toggle('explode')
+        $('#enunciado-row').addClass('desactivate')
+        // $('#ejercicio-row').toggle('explode')
+        $('#ejercicio-row').removeClass('desactivate')
+    })
+
+    const validar_null_input = (valor, st) => {
+        if (valor && !isNaN(valor)) {
+            switch (st) {
+                case 1:
+                    return valor > 0 && valor < 6 ? true : false
+                    break
+                default:
+                    return true
+                    break
+
+            }
+        } else {
+            return false
+        }
+    }
+
+
+    const data_note = () => {
+        cont += 1
+        var id = '#nota' + cont + '-form'
+        valor = $(id).val()
+        valor = parseFloat(valor)
+        if (validar_null_input(valor, 1)) {
+            lista_notas.push(valor)
+            var form = '#form-nt' + cont,
+                form_hidde = '#form2-nt' + cont
+            $(form).toggle('explode')
+            $(form_hidde).toggle('explode')
+
+        } else {
+            cont -= 1
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    }
+
+    const data_peso = () => {
+        var id = '#peso' + cont
+        var valor = $(id).val()
+        valor = parseInt(valor)
+        if (validar_null_input(valor, 0)) {
+            lista_pesos.push(valor)
+            var form = '#nota' + (cont + 1),
+                form_hidde = '#nota' + cont
+            $(form).toggle('explode')
+            $(form_hidde).toggle('explode')
+
+            var nota_span = '#nota' + cont + '-span',
+                peso_span = '#peso' + cont + '-span'
+
+
+            $(nota_span).text(lista_notas[cont - 1])
+            $(peso_span).text(lista_pesos[cont - 1] + '%')
+            lista_pesos[cont - 1] = lista_pesos[cont - 1] / 100
+            console.log(lista_pesos)
+            if (cont == 1) {
+                $('#col-vars').toggle('fold')
+            } else {
+                switch (cont) {
+                    case 2:
+                        $('#contenedor-2').toggle('fold')
+                        break
+                    case 3:
+                        $('#contenedor-3').toggle('fold')
+                        break
+                    case 4:
+                        $('#contenedor-4').toggle('explode')
+                        $('#col-forms').toggle('explode')
+                        $('#content-operacion').toggle('explode')
+                        break
+                }
+
+            }
+        }else{
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    }
+
+    // PARTE 1
+    $('#form-nt1').submit(function (e) {
+        e.preventDefault()
+        data_note()
+    })
+    $('#form2-nt1').submit(function (e) {
+        e.preventDefault()
+        data_peso()
+    })
+    // PARTE 2
+    $('#form-nt2').submit(function (e) {
+        e.preventDefault()
+        data_note()
+    })
+    $('#form2-nt2').submit(function (e) {
+        e.preventDefault()
+        data_peso()
+    })
+    // PARTE 3
+    $('#form-nt3').submit(function (e) {
+        e.preventDefault()
+        data_note()
+    })
+    $('#form2-nt3').submit(function (e) {
+        e.preventDefault()
+        data_peso()
+    })
+    // PARTE 4
+    $('#form-nt4').submit(function (e) {
+        e.preventDefault()
+        data_note()
+    })
+    $('#form2-nt4').submit(function (e) {
+        e.preventDefault()
+        data_peso()
+    })
+
+    $('#showresutl').on('click', function (e) {
+        e.preventDefault()
+        var result = 0
+        // $('#content-operacion').toggle('fold')
+        $('#showresutl').toggle('fold')
+        $('#content-resultado').toggle('fold')
+
+        result = (lista_notas[0] * lista_pesos[0]) + (lista_notas[1] * lista_pesos[1]) + (lista_notas[2] * lista_pesos[2]) + (lista_notas[3] * lista_pesos[3])
+        result = result.toFixed(1)
+        if (result >= 4) {
+            document.getElementById('result').innerHTML = result + '<br>Nota superior a 4'
+        }else{
+            document.getElementById('result').innerHTML = result + '<br>Nota NO superior a 4'
+        }
+        $('#content-reset').toggle('fold')
+    })
+
+    $('#reiniciar1').on('click', (e) => {
+        e.preventDefault()
+        location.reload()
+    })
+
+
+</script>
+{% endblock scripts %}

@@ -1,3 +1,7 @@
+main{
+    height: 100vh;
+}
+
 main .row{
     max-width: 1219px;    
     padding-top: 80px !important;

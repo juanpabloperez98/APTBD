@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplos.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplo_operadores/ejemplo1.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="/logica_predicados#ejemplos">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+
+    <!-- ENUNCIADO -->
+    <div class="row mx-auto" id="enunciado-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            <div class="contenedor-enunciado">
+                <h2>TITULO</h2>
+                <p>
+                    Se debe elegir el nuevo representante estudiantil y hay 3 candidatos que están postulados a ello.
+                    Después de las votaciones se cuentan los votos de cada uno de los candidatos y le piden a usted como
+                    programador que diseñe un algoritmo que determine, a partir del número de votos de cada candidato,
+                    quién es el ganador.
+                </p>
+                <div class="boton">
+                    <a href="" id="start-btn" class="btn btn-success">
+                        Empezar
+                        <img class="ml-2" src="https://img.icons8.com/material-outlined/24/000000/start.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto desactivate" id="ejercicio-row" style="max-width: 1111px;">
+        <!-- AQUI VA EL CODIGO -->
+        <div class="col-lg-3" id="col-forms">
+            <form id="form">
+                <div class="form-group ej1 text-center">
+                    <label for="num_votos1">Votos estudiante 1</label>
+                    <input type="text" class="form-control" id="num_votos1" placeholder="Votos">
+                    <small id="num_notas" class="form-text text-muted">Ingrese el numero de votos del estudiante
+                        1</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+            <form id="form2" class="desactivate">
+                <div class="form-group ej1 text-center" id="cont-voto-2">
+                    <label for="num_votos2">Votos estudiante 2</label>
+                    <input type="text" class="form-control" id="num_votos2" placeholder="NOTAS">
+                    <small id="num_notas" class="form-text text-muted">Ingrese el numero de votos del estudiante
+                        2</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+            <form id="form3" class="desactivate">
+                <div class="form-group ej1 text-center" id="cont-voto-3">
+                    <label for="num_votos3">Votos estudiante 3</label>
+                    <input type="text" class="form-control" id="num_votos3" placeholder="Votos">
+                    <small id="num_notas" class="form-text text-muted">Ingrese el numero de votos del estudiante
+                        3</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2 desactivate" id="content-info-var">
+            <p id="voto-p-0" style="font-family: RobotoCondensed-Regular;">votos 1: <span class="font-weight-bold"
+                    id="voto-span-0"></span></p>
+            <p id="voto-p-1" class="desactivate" style="font-family: RobotoCondensed-Regular;">votos 2: <span
+                    class="font-weight-bold" id="voto-span-1"></span></p>
+            <p id="voto-p-2" class="desactivate" style="font-family: RobotoCondensed-Regular;">votos 3: <span
+                    class="font-weight-bold" id="voto-span-2"></span></p>
+        </div>
+        <div class="col-lg-7 text-left desactivate" id="content-operacion">
+            <p style="margin-top: 0px;">if(votos 1 > votos 2 && votos 1 > votos 3){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El estudiante 1 es el ganador <br>
+            }else if(votos 2 > votos 1 && votos 2 > votos 3){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El estudiante 2 es el ganador <br>
+            }else if(votos 3 > votos 2 && votos 3 > votos 1){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El estudiante 3 es el ganador <br>
+            }else{ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ha habido un empate <br>
+            }</p>
+            <a href="#" id="showresutl" style="display: block; width: 20%; margin: auto;" class="btn btn-success mb-2">Ver resultado</a>
+        </div>
+        <div class="col-lg-3 text-center desactivate" id="content-resultado">
+            <h3>RESULTADO</h3>
+            <p id="result"></p>
+        </div>
+        <div class="col-lg-12 desactivate text-center" id="content-reset">
+            <a href="#" id="reiniciar1" class="btn btn-success">
+                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+        </div>
+    </div>
+
+
+</main>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $('#start-btn').on('click', (e) => {
+        e.preventDefault()
+        // $('#enunciado-row').toggle('explode')
+        $('#enunciado-row').addClass('desactivate')
+        // $('#ejercicio-row').toggle('explode')
+        $('#ejercicio-row').removeClass('desactivate')
+    })
+
+    var voto1 = 0,
+        voto2 = 0,
+        voto3 = 0
+
+
+    const validar_null_input = (valor) => {
+        return valor && !isNaN(valor) ? true : false
+    }
+
+
+
+    $('#form').submit(function (e) {
+        e.preventDefault()
+        voto1 = parseInt($('#num_votos1').val())
+        if (validar_null_input(voto1)) {
+            $('#form').toggle('explode')
+            $('#form2').toggle('explode')
+            $('#content-info-var').toggle('explode')
+            $('#voto-span-0').text(voto1)
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+
+    })
+    $('#form2').submit(function (e) {
+        e.preventDefault()
+        voto2 = parseInt($('#num_votos2').val())
+        if (validar_null_input(voto2)) {
+            $('#form2').toggle('explode')
+            $('#form3').toggle('explode')
+            $('#voto-p-1').toggle('explode')
+            $('#voto-span-1').text(voto2)
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+    $('#form3').submit(function (e) {
+        e.preventDefault()
+        voto3 = parseInt($('#num_votos3').val())
+        if (validar_null_input(voto3)) {
+            $('#col-forms').toggle('explode')
+            $('#content-operacion').toggle('explode')
+            $('#voto-p-2').toggle('explode')
+            $('#voto-span-2').text(voto3)
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+    $('#showresutl').on('click', function (e) {
+        e.preventDefault()
+        
+        // $('#content-operacion').toggle('fold')
+        $('#showresutl').toggle('fold')
+        $('#content-resultado').toggle('fold')
+        var resultado = ""
+        if(voto1 > voto2 && voto1 > voto3){
+            resultado = "El estudiante 1 es el ganador"
+        }else if(voto2 > voto1 && voto2 > voto3){
+            resultado = "El estudiante 2 es el ganador"
+        }else if(voto3 > voto1 && voto3 > voto2){
+            resultado = "El estudiante 3 es el ganador"
+        }else{
+            resultado = "Ha habido un empate"
+        }
+        
+        $('#result').text(resultado)
+        $('#content-reset').toggle('fold')
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
+        e.preventDefault()
+        location.reload()
+    })
+</script>
+{% endblock scripts %}

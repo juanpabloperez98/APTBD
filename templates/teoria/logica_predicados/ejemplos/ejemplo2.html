@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplos.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplo_operadores/ejemplo1.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="/logica_predicados#ejemplos">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+
+    <!-- ENUNCIADO -->
+    <div class="row mx-auto" id="enunciado-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            <div class="contenedor-enunciado">
+                <h2>TITULO</h2>
+                <p>
+                    En una empresa de tecnología, se desea hacer descuentos a sus clientes de acuerdo al monto de la
+                    venta efectuada, de esta manera se le pide a usted como ingeniero que diseñe un sistema el cual dado
+                    el monto de la vente determine que tipo de descuento se debe hacer:
+                <ul class="container">
+                    <li>Si el monto es menor que 500 no hay descuento</li>
+                    <li>Si el monto está comprendido entre 500 y 1000, el descuento es de 5%</li>
+                    <li>Si el monto está comprendido entre 1000 y 7000,el descuento es del 11%</li>
+                    <li>Si el monto es mayor de 7000 el desc es del 25%.</li>
+                </ul>
+                </p>
+                <div class="boton">
+                    <a href="" id="start-btn" class="btn btn-success">
+                        Empezar
+                        <img class="ml-2" src="https://img.icons8.com/material-outlined/24/000000/start.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto desactivate" id="ejercicio-row" style="max-width: 1111px;">
+        <!-- AQUI VA EL CODIGO -->
+        <div class="col-lg-3" id="col-forms">
+            <form id="form">
+                <div class="form-group ej1 text-center">
+                    <label for="monto">Monto de la venta</label>
+                    <input type="text" class="form-control" id="monto" placeholder="Monto">
+                    <small id="num_notas" class="form-text text-muted">Ingrese el monto de la venta</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2 desactivate" id="content-info-var">
+            <p id="monto-p-0" style="font-family: RobotoCondensed-Regular;">Monto: <span class="font-weight-bold"
+                    id="monto-span-0"></span></p>
+        </div>
+        <div class="col-lg-7 text-left desactivate" id="content-operacion">
+            <p style="margin-top: 0px;">if(Monto > 500 && Monto < 1000){ <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monto * 0.05<br>
+                    }else if(Monto > 1000 && Monto < 7000){ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monto * 0.11<br>
+                        }else if(Monto > 7000){ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monto * 0.25<br>
+                        }else{ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No se aplica descuento <br>
+                        }</p>
+            <a href="#" id="showresutl" style="display: block; width: 20%; margin: auto;"
+                class="btn btn-success mb-2">Ver resultado</a>
+        </div>
+        <div class="col-lg-3 text-center desactivate" id="content-resultado">
+            <h3>RESULTADO</h3>
+            <p id="result"></p>
+        </div>
+        <div class="col-lg-12 desactivate text-center" id="content-reset">
+            <a href="#" id="reiniciar1" class="btn btn-success">
+                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+        </div>
+    </div>
+
+
+</main>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $('#start-btn').on('click', (e) => {
+        e.preventDefault()
+        // $('#enunciado-row').toggle('explode')
+        $('#enunciado-row').addClass('desactivate')
+        // $('#ejercicio-row').toggle('explode')
+        $('#ejercicio-row').removeClass('desactivate')
+    })
+
+    var monto = 0
+
+
+    const validar_null_input = (valor) => {
+        return valor && !isNaN(valor) ? true : false
+    }
+
+
+
+    $('#form').submit(function (e) {
+        e.preventDefault()
+        monto = parseInt($('#monto').val())
+        if (validar_null_input(monto)) {
+            $('#content-info-var').toggle('explode')
+            $('#content-operacion').toggle('explode')
+            $('#col-forms').toggle('explode')
+            $('#monto-span-0').text(monto)
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+
+    $('#showresutl').on('click', function (e) {
+        e.preventDefault()
+
+        // $('#content-operacion').toggle('fold')
+        $('#showresutl').toggle('fold')
+        $('#content-resultado').toggle('fold')
+        var resultado = 0
+
+        if (monto > 500 && monto < 1000) {
+            resultado = monto - (monto * 0.05)
+        } else if (monto > 1000 && monto < 7000) {
+            resultado = monto - (monto * 0.11)
+        } else if (monto > 7000) {
+            resultado = monto - (monto * 0.25)
+        } else {
+            resultado = "No se aplica descuento"
+        }
+
+        $('#result').text(resultado)
+        $('#content-reset').toggle('fold')
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
+        e.preventDefault()
+        location.reload()
+    })
+</script>
+{% endblock scripts %}

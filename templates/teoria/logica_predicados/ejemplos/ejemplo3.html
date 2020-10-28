@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplos.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplo_operadores/ejemplo1.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="/logica_predicados#ejemplos">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+
+    <!-- ENUNCIADO -->
+    <div class="row mx-auto" id="enunciado-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            <div class="contenedor-enunciado">
+                <h2>TITULO</h2>
+                <p>
+                    En una empresa se le paga a un empleado un porcentaje por concepto de bonificación dependiendo del
+                    sueldo que gana y el tiempo que lleva en la empresa, si el empleado lleva más de 3 años en la
+                    empresa y su sueldo es igual o superior a 1’200.000 entonces el empleado recibirá un bonificación
+                    del 10% con respecto a su sueldo, de lo contrario se dice que el empleado no aplica para el concepto
+                    de bonificación.
+                </p>
+                <div class="boton">
+                    <a href="" id="start-btn" class="btn btn-success">
+                        Empezar
+                        <img class="ml-2" src="https://img.icons8.com/material-outlined/24/000000/start.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto desactivate" id="ejercicio-row" style="max-width: 1111px;">
+        <!-- AQUI VA EL CODIGO -->
+        <div class="col-lg-3" id="col-forms">
+            <form id="form">
+                <div class="form-group ej1 text-center">
+                    <label for="sueldo">Sueldo del empleado</label>
+                    <input type="text" class="form-control" id="sueldo" placeholder="Sueldo">
+                    <small id="num_notas" class="form-text text-muted">Ingrese sueldo del empleado</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+            <form id="form2" class="desactivate">
+                <div class="form-group ej1 text-center">
+                    <label for="tiempo">Tiempo en la empresa</label>
+                    <input type="text" class="form-control" id="tiempo" placeholder="Tiempo">
+                    <small id="num_notas" class="form-text text-muted">Ingrese tiempo en la empresa del empleado</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2 desactivate" id="content-info-var">
+            <p id="sueldo-p-0" style="font-family: RobotoCondensed-Regular;">Sueldo: <span class="font-weight-bold"
+                    id="sueldo-span-0"></span></p>
+            <p id="tiempo-p-0" class="desactivate" style="font-family: RobotoCondensed-Regular;">Tiempo: <span
+                    class="font-weight-bold" id="tiempo-span-0"></span></p>
+        </div>
+        <div class="col-lg-7 text-left desactivate" id="content-operacion">
+            <p style="margin-top: 0px;">if(Sueldo >= 1200000 && Tiempo >= 3){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sueldo * 0.10<br>
+                }else{ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No aplica bonificación<br>
+                }</p>
+            <a href="#" id="showresutl" style="display: block; width: 20%; margin: auto;"
+                class="btn btn-success mb-2">Ver resultado</a>
+        </div>
+        <div class="col-lg-3 text-center desactivate" id="content-resultado">
+            <h3>RESULTADO</h3>
+            <p id="result"></p>
+        </div>
+        <div class="col-lg-12 desactivate text-center" id="content-reset">
+            <a href="#" id="reiniciar1" class="btn btn-success">
+                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+        </div>
+    </div>
+
+
+</main>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $('#start-btn').on('click', (e) => {
+        e.preventDefault()
+        // $('#enunciado-row').toggle('explode')
+        $('#enunciado-row').addClass('desactivate')
+        // $('#ejercicio-row').toggle('explode')
+        $('#ejercicio-row').removeClass('desactivate')
+    })
+
+    var valor1 = 0,
+        valor2 = 0
+
+
+    const validar_null_input = (valor) => {
+        return valor && !isNaN(valor) ? true : false
+    }
+
+
+
+    $('#form').submit(function (e) {
+        e.preventDefault()
+        valor1 = parseInt($('#sueldo').val())
+        if (validar_null_input(valor1)) {
+            $('#form').toggle('explode')
+            $('#form2').toggle('explode')
+            $('#content-info-var').toggle('explode')
+            $('#sueldo-span-0').text(valor1)
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+    $('#form2').submit(function (e) {
+        e.preventDefault()
+        valor2 = parseInt($('#tiempo').val())
+        if (validar_null_input(valor2)) {
+            $('#col-forms').toggle('explode')
+            $('#content-operacion').toggle('explode')
+            $('#tiempo-p-0').toggle('explode')
+            $('#tiempo-span-0').text(valor2)
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+
+    $('#showresutl').on('click', function (e) {
+        e.preventDefault()
+
+        // $('#content-operacion').toggle('fold')
+        $('#showresutl').toggle('fold')
+        $('#content-resultado').toggle('fold')
+        var resultado = 0
+
+        if (valor1 >= 1200000 && valor2 >= 3) {
+            resultado = valor1 * 0.10
+        } else {
+            resultado = "No aplica bonificación"
+        }
+
+        $('#result').text(resultado)
+        $('#content-reset').toggle('fold')
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
+        e.preventDefault()
+        location.reload()
+    })
+</script>
+{% endblock scripts %}

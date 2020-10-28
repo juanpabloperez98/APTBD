@@ -1,6 +1,11 @@
 main{
     margin-top: 58px;
 }
+
+main{
+    height: 100vh;
+}
+
 main .row{
     max-width: 1219px;
     margin: auto auto auto auto;
