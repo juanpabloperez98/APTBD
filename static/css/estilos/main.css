@@ -106,9 +106,9 @@ main div .principal-content .main-botones a#teoria {
     background-color: rgb(168, 168, 168);
 }
 
-#section2 #image-games-port-content img {
+/* #section2 #image-games-port-content img {
     margin-top: 100px;
-}
+} */
 
 /* Section Slider */
 
@@ -148,6 +148,10 @@ main div .principal-content .main-botones a#teoria {
     color: white;
     width: 80%;
     background-color: #2180c3;
+}
+
+.img_cont img{
+    height: 160px;
 }
 /* #slider .slider {
     background-color: blue;
