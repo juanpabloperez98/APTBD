@@ -1,0 +1,1 @@
+web: gunicorn APBTD.wsgi --log-file -

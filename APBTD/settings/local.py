@@ -1,9 +1,9 @@
 from .base import *
 
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Database
@@ -21,3 +21,5 @@ DATABASES = {
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR.child('static')]
+STATIC_ROOT = BASE_DIR.child('staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
