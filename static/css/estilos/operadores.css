@@ -1,0 +1,14 @@
+main div #second-content::after {
+    background: none;
+}
+
+#second-content img {
+    height: 300px;
+    width: 300px !important;
+    margin: auto;
+}
+
+/* #col-img-arit img {
+    height: 300px;
+    width: 100px;
+} */

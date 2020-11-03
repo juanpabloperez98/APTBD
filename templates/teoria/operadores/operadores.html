@@ -4,6 +4,7 @@
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/estilos/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilos/operadores.css' %}">
 {% endblock styles %}
 
 
@@ -50,13 +51,13 @@
         <div class="col-lg-6 principal-content">
             <h1>Operadores</h1>
             <p>
-                Los operadores son un tipo de símbolo que pueden aparecer en las expresiones, e indican al 
-                compilador la realización de determinadas operaciones matemáticas, lógicas y numéricas. Se 
+                Los operadores son un tipo de símbolo que pueden aparecer en las expresiones, e indican al
+                compilador la realización de determinadas operaciones matemáticas, lógicas y numéricas. Se
                 pueden aplicar a variables u otros objetos denominados operandos.
             </p>
         </div>
-        <div class="col-lg-6" id="second-content">
-            <img class="w-100" src="{% static 'Im/operadores/Operadores.png' %}" alt="computer">
+        <div class="col-lg-6 text-center" id="second-content">
+            <img class="w-100" src="{% static 'Im/operadores/Operadores.png' %}" style="" alt="computer">
         </div>
     </div>
 </main>
@@ -65,23 +66,21 @@
         <div class="col-lg-12 introduction">
             <h1>Operadores aritméticos</h1>
             <p>
-                Los operadores aritméticos son aquellos que manipulan datos numéricos, tanto enteros como 
+                Los operadores aritméticos son aquellos que manipulan datos numéricos, tanto enteros como
                 reales. Los operadores se sitúan entre dos expresiones aritméticas.
             </p>
         </div>
     </div>
     <div class="row mx-auto" id="row-section1">
-        <div class="col-lg-6">
-            <div class="col-lg-6" id="second-content">
-                <img class="w-100" src="{% static 'Im/Computer.png' %}" alt="computer">
-            </div>
+        <div class="col-lg-6 text-center" id="second-content">
+            <img class="w-100" src="{% static 'Im/operadores/aritmeticos.png' %}" alt="computer">
         </div>
         <div class="col-lg-6 introduction">
             <h1>Sintaxis</h1>
             <p>
-                Para implementar los operadores aritméticos en un algoritmo, basta con utilizar los mismos 
+                Para implementar los operadores aritméticos en un algoritmo, basta con utilizar los mismos
                 que se usan en las matemáticas para realizar las operaciones como lo son la suma(+), resta
-                (-), multiplicación(*) y división(/). Lo único que se debe tener en cuenta a la hora de 
+                (-), multiplicación(*) y división(/). Lo único que se debe tener en cuenta a la hora de
                 implementar alguno de estos operadores es la jerarquia en que se ejecutan y los signos de
                 agrupación que ayudan a dar un orden en la ejecución.
             </p>
@@ -93,8 +92,8 @@
         <div class="col-lg-12 introduction">
             <h1 class="text-center">Operadores lógicos</h1>
             <p>
-                Los operadores lógicos permiten agrupar expresiones lógicas. Las expresiones lógicas son todas 
-                aquellas expresiones que obtienen como resultado verdadero o falso. Los operadores lógicos son 
+                Los operadores lógicos permiten agrupar expresiones lógicas. Las expresiones lógicas son todas
+                aquellas expresiones que obtienen como resultado verdadero o falso. Los operadores lógicos son
                 aquellos que hacen de nexo de este tipo de expresiones.
             </p>
         </div>
@@ -103,16 +102,15 @@
         <div class="col-lg-6 introduction">
             <h1 class="text-center">Sintaxis</h1>
             <p>
-                De igual forma, para implementar los operadores lógicos en un algoritmo, basta con utilizar los 
-                mismos que se usan en las matemáticas para realizar las operaciones de comparación como lo son 
-                mayor que(>), menor que(<), mayor o igual que(>=), menor o igual(<=) y igual(=). Pero, además, 
-                en los algoritmos hay un operador llamado diferente de(!=), este permite, como su nombre lo
-                indica, identificar si dos número o expresiones son diferentes.
-            </p>
+                De igual forma, para implementar los operadores lógicos en un algoritmo, basta con utilizar los
+                mismos que se usan en las matemáticas para realizar las operaciones de comparación como lo son
+                mayor que(>), menor que(<), mayor o igual que(>=), menor o igual(<=) y igual(=). Pero, además, en los
+                        algoritmos hay un operador llamado diferente de(!=), este permite, como su nombre lo indica,
+                        identificar si dos número o expresiones son diferentes. </p>
         </div>
         <div class="col-lg-6">
             <div class="col-lg-6" id="second-content">
-                <img class="w-100" src="{% static 'Im/Computer.png' %}" alt="computer">
+                <img class="w-100" src="{% static 'Im/operadores/logicos.png' %}" alt="computer">
             </div>
         </div>
     </div>
@@ -123,8 +121,8 @@
         <div class="col-lg-12 introduction" id="ejemplos" style="margin: 30px auto 30px auto;">
             <h1>Ejemplos</h1>
             <p>
-                A continuación, se presentarán una serie de ejemplos de ambos tipos de operadores, en estos se 
-                observa el uso que se le dan estos operadores para resolver problemas de la vida real y su 
+                A continuación, se presentarán una serie de ejemplos de ambos tipos de operadores, en estos se
+                observa el uso que se le dan estos operadores para resolver problemas de la vida real y su
                 implementación.
             </p>
         </div>
@@ -143,7 +141,8 @@
                         <h3>Ejemplo #1</h3>
                         <hr style="width: 80%; margin: auto;">
                         <div style="width: 70%; margin: auto;">
-                            <img src="{% static 'Im/operadores/ej1/imgane_presentacion.png' %}" alt="image-module" width="100%">
+                            <img src="{% static 'Im/operadores/ej1/imgane_presentacion.png' %}" alt="image-module"
+                                width="100%">
                         </div>
                         <div class="boton">
                             <a href="{% url 'operadores_app:ejemplo1' %}">Ir al ejemplo</a>
@@ -153,7 +152,8 @@
                         <h3>Ejemplo #2</h3>
                         <hr style="width: 80%; margin: auto;">
                         <div style="width: 70%; margin: auto;">
-                            <img src="{% static 'Im/operadores/ej2/imgane_presentacion.png' %}" alt="image-module" width="100%">
+                            <img src="{% static 'Im/operadores/ej2/imgane_presentacion.png' %}" alt="image-module"
+                                width="100%">
                         </div>
                         <div class="boton">
                             <a href="{% url 'operadores_app:ejemplo2' %}">Ir al ejemplo</a>
@@ -163,7 +163,8 @@
                         <h3>Ejemplo #3</h3>
                         <hr style="width: 80%; margin: auto;">
                         <div style="width: 70%; margin: auto;">
-                            <img src="{% static 'Im/operadores/ej3/imgane_presentacion.png' %}" alt="image-module" width="100%">
+                            <img src="{% static 'Im/operadores/ej3/imgane_presentacion.png' %}" alt="image-module"
+                                width="100%">
                         </div>
                         <div class="boton">
                             <a href="{% url 'operadores_app:ejemplo3' %}">Ir al ejemplo</a>
@@ -177,7 +178,8 @@
                         <h3>Ejemplo #4</h3>
                         <hr style="width: 80%; margin: auto;">
                         <div style="width: 70%; margin: auto;">
-                            <img src="{% static 'Im/operadores/ej4/imgane_presentacion.png' %}" alt="image-module" width="100%">
+                            <img src="{% static 'Im/operadores/ej4/imgane_presentacion.png' %}" alt="image-module"
+                                width="100%">
                         </div>
                         <div class="boton">
                             <a href="{% url 'operadores_app:ejemplo4' %}">Ir al ejemplo</a>
@@ -187,7 +189,8 @@
                         <h3>Ejemplo #5</h3>
                         <hr style="width: 80%; margin: auto;">
                         <div style="width: 70%; margin: auto;">
-                            <img src="{% static 'Im/operadores/ej5/imgane_presentacion.png' %}" alt="image-module" width="100%">
+                            <img src="{% static 'Im/operadores/ej5/imgane_presentacion.png' %}" alt="image-module"
+                                width="100%">
                         </div>
                         <div class="boton">
                             <a href="{% url 'operadores_app:ejemplo5' %}">Ir al ejemplo</a>
@@ -197,7 +200,8 @@
                         <h3>Ejemplo #6</h3>
                         <hr style="width: 80%; margin: auto;">
                         <div style="width: 70%; margin: auto;">
-                            <img src="{% static 'Im/operadores/ej6/imgane_presentacion.png' %}" alt="image-module" width="100%">
+                            <img src="{% static 'Im/operadores/ej6/imgane_presentacion.png' %}" alt="image-module"
+                                width="100%">
                         </div>
                         <div class="boton">
                             <a href="{% url 'operadores_app:ejemplo6' %}">Ir al ejemplo</a>
