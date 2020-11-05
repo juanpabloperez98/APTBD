@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplos.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplo_operadores/ejemplo1.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="/logica_predicados#ejemplos">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+
+    <!-- ENUNCIADO -->
+    <div class="row mx-auto" id="enunciado-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            <div class="contenedor-enunciado">
+                <h2>TITULO</h2>
+                <p>
+                    En una empresa desarrolladora de videojuegos, se está realizando un video juego de un laberinto. El
+                    juego consiste en pedirle al usuario un número para poder mover el personaje, dependiendo del número
+                    ingresado, el personaje se moverá en una dirección. Para poder hacer pruebas, se le ha pedido al
+                    programador a cargo (usted), desarrollar un programa el cual le permita al usuario ingresar un
+                    número, y dependiendo del numero ingresado mostrar la dirección en la que se mueve el personaje,
+                    teniendo en cuenta los siguientes parámetros:
+
+                <ul class="container">
+                    <li>Número 1, es dirección arriba</li>
+                    <li>Número 2, es dirección derecha</li>
+                    <li>Número 3, es dirección abajo</li>
+                    <li>Número 4, es dirección izquierda</li>
+                </ul>
+
+                </p>
+                <div class="boton">
+                    <a href="" id="start-btn" class="btn btn-success">
+                        Empezar
+                        <img class="ml-2" src="https://img.icons8.com/material-outlined/24/000000/start.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto desactivate" id="ejercicio-row" style="max-width: 1111px;">
+        <!-- AQUI VA EL CODIGO -->
+        <div class="col-lg-3" id="col-forms">
+            <form id="form">
+                <div class="form-group ej1 text-center">
+                    <label for="tam">Ingrese número</label>
+                    <input type="text" class="form-control" id="num" placeholder="Número">
+                    <small id="num_notas" class="form-text text-muted">Ingrese número para el movimiento</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2 desactivate" id="content-info-var">
+            <p id="sueldo-p-0" style="font-family: RobotoCondensed-Regular;">Movimiento: <span class="font-weight-bold"
+                    id="mov-span-0"></span></p>
+        </div>
+        <div class="col-lg-7 text-left desactivate" id="content-operacion">
+            <p style="margin-top: 0px;">if(Movimiento == 1){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Movimiento Arriba<br>
+                }else if(Movimiento == 2){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Movimiento Derecha<br>
+                }else if(Movimiento == 3){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Movimiento Abajo<br>
+                }else if(Movimiento == 4){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Movimiento izquierda<br>
+                }else{ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Movimiento invalido<br>
+                }
+            </p>
+            <a href="#" id="showresutl" style="display: block; width: 20%; margin: auto;"
+                class="btn btn-success mb-2">Ver resultado</a>
+        </div>
+        <div class="col-lg-3 text-center desactivate" id="content-resultado">
+            <h3>RESULTADO</h3>
+            <p id="result"></p>
+        </div>
+        <div class="col-lg-12 desactivate text-center" id="content-reset">
+            <a href="#" id="reiniciar1" class="btn btn-success">
+                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+        </div>
+    </div>
+
+
+</main>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $('#start-btn').on('click', (e) => {
+        e.preventDefault()
+        // $('#enunciado-row').toggle('explode')
+        $('#enunciado-row').addClass('desactivate')
+        // $('#ejercicio-row').toggle('explode')
+        $('#ejercicio-row').removeClass('desactivate')
+    })
+
+    var valor1 = 0,
+        valor2 = 0
+
+
+    const validar_null_input = (valor) => {
+        return valor && !isNaN(valor) ? true : false
+    }
+
+
+
+    $('#form').submit(function (e) {
+        e.preventDefault()
+        valor1 = parseInt($('#num').val())
+        if (validar_null_input(valor1)) {
+            $('#col-forms').toggle('explode')
+            $('#content-info-var').toggle('explode')
+            $('#mov-span-0').text(valor1)
+            $('#content-operacion').toggle('explode')
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+    $('#showresutl').on('click', function (e) {
+        e.preventDefault()
+
+        // $('#content-operacion').toggle('fold')
+        $('#showresutl').toggle('fold')
+        $('#content-resultado').toggle('fold')
+        var resultado = 0
+
+        if (valor1 == 1) {
+            resultado = "Movimiento Arriba"
+        } else if (valor1 == 2) {
+            resultado = "Movimiento Derecha"
+        } else if (valor1 == 3) {
+            resultado = "Movimiento Abajo"
+        } else if (valor1 == 4) {
+            resultado = "Movimiento Izquierda"
+        }else{
+            resultado = "Movimiento No Valido"
+        }
+
+        $('#result').text(resultado)
+        $('#content-reset').toggle('fold')
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
+        e.preventDefault()
+        location.reload()
+    })
+</script>
+{% endblock scripts %}
