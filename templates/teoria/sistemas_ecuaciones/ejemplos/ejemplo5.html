@@ -55,9 +55,43 @@
         <!-- AQUI VA EL CODIGO -->
         <div class="col-lg-12">
             <h2>Solución:</h2>
+            <br>
                 <p>
+                    Escribimos la nota sobre 100 en vez de sobre 10: <br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;8.05 ⋅ 10 = 80.5 <br><br>
+
+                    Llamamos x al número de respuestas correctas e y al número de respuestas incorrectas.Puesto 
+                    que se deben contestar todas las preguntas, debe cumplirse la ecuación: <br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;x + y = 100 <br><br>
+
+                    Cada respuesta correcta suma 1 y cada incorrecta resta 0.5: <br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;1 ⋅ x − 0.5 ⋅ y = 80.5 <br><br>
+
+                    Ahora resolvemos el sistema de ecuaciones por sustitución: <br>
+                    Aislamos la x en la primera ecuación: <br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;x + y = 100 &nbsp;->&nbsp; x = 100 − y <br><br>
+
+                    Ahora sustituimos x en la segunda ecuación: <br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;x − 0.5 ⋅ y = 80.5 &nbsp;->&nbsp; (100 − y) − 0.5 ⋅ y = 80.5 <br><br>
+
+                    Resolvemos la ecuación de primer grado: <br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;100 − y − 0.5 ⋅ y = 80.5 &nbsp;->&nbsp; 100 − 80.5 = y + 0.5y &nbsp;->&nbsp; 19.5 = 1.5y &nbsp;->&nbsp; y = (19.5/1.5) = 13 <br><br>
+
+                    Tenemos que el número de respuestas incorrectas es: <br><br>
                     
+                    &nbsp;&nbsp;&nbsp;&nbsp;y = 13 <br><br>
+                    
+                    Fácilmente calculamos el número de respuestas correctas: <br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;x = 100 − y = 100 − 13 = 87
                 </p>
+            <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
             <a href="{% url 'sistemas_ecuaciones_app:ejemplo5' %}" id="reiniciar1" class="btn btn-success">
