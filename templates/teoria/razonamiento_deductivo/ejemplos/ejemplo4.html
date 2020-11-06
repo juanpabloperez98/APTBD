@@ -35,9 +35,13 @@
         <div class="col-lg-12">
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #4</h2>
+                <br>
                 <p>
-                    
-                </p>
+                    Luis le dice a su amigo de cuarto grado que su otro compañero iba en sexto grado. Pedro le
+                    comenta a su amigo de sexto grado que había aprobado el curso de matemática. Entre ellos 
+                    tres, uno cursa el cuarto, otro el quinto y el último, sexto grado, aunque no necesariamente
+                    en este orden. ¿En qué grado está Carlos?
+                </p><br>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
                         Solución
@@ -52,9 +56,41 @@
         <!-- AQUI VA EL CODIGO -->
         <div class="col-lg-12">
             <h2>Solución:</h2>
+            <br>
                 <p>
-                    
+                    Haciendo una tabla: <br><br>
                 </p>
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td>4°</td>
+                        <td>5°</td>
+                        <td>6°</td>
+                      </tr>
+                      <tr>
+                        <td>Luis</td>
+                        <td>no</td>
+                        <td>sí</td>
+                        <td>no</td>
+                      </tr>
+                      <tr>
+                        <td>Pedro</td>
+                        <td>sí</td>
+                        <td>no</td>
+                        <td>no</td>
+                      </tr>
+                      <tr>
+                        <td>Carlos</td>
+                        <td>no</td>
+                        <td>no</td>
+                        <td>sí</td>
+                      </tr>
+                    </tbody>
+                </table><br><br>
+                <p>
+                    Se nota que Carlos va en sexto grado.
+                </p><br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
             <a href="{% url 'razonamiento_deductivo_app:ejemplo4' %}" id="reiniciar1" class="btn btn-success">

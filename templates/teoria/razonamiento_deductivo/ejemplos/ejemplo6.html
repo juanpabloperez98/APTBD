@@ -36,7 +36,14 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #6</h2>
                 <p>
-                    
+                    Se cometió un homicidio en la ciudad del detective DD. <br><br>
+
+                    Se sospecha de cuatro conocidos asesinos, el Rorro, Joselito, Malolo y El loro. De ser 
+                    Malolo el homicida, el delito fue premeditado. Si los asesinos fueron Joselito y el Rorro,
+                    ocurrió en la noche. Si el asesino es el Loro, no ocurrió el día domingo. <br><br>
+
+                    La investigación realizada por DD asegura que el asesinato se produjo el domingo por la 
+                    tarde. Con los datos disponibles, ¿Cuál es el sospechoso del crimen?
                 </p>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
@@ -52,9 +59,17 @@
         <!-- AQUI VA EL CODIGO -->
         <div class="col-lg-12">
             <h2>Solución:</h2>
+            <br>
                 <p>
-                    
-                </p>
+                    De la información que se tiene se puede decir que: <br><br>
+
+                    Si el homicida es Malolo, entonces el delito fue premeditado. Si los homicidas fueron 
+                    Joselito y el Rorro, el homicidio ocurrió en la noche. Si el homicida es el Loro, el
+                    hecho no ocurrió el domingo. Según otros datos del problema, el homicidio ocurrió el 
+                    domingo en la tarde, por lo tanto, se descarta que los asesinos fueron Joselito y el Rorro
+                    (el homicidio fue en la tarde) y tampo el Loro (el asesinato fue el domingo). Así se tiene
+                    que sospechoso principal es Malolo.
+                </p><br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
             <a href="{% url 'razonamiento_deductivo_app:ejemplo6' %}" id="reiniciar1" class="btn btn-success">
