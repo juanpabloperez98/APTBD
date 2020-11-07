@@ -36,8 +36,9 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #2</h2>
                 <p>
-                    
+                    ¿Qué figura continúa?
                 </p>
+                <img class="w-100 text-center" src="{% static 'Im/razonamientoabst/ejemplo2.jpg' %}" style="height: 300px;" alt="computer"><br><br>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
                         Solución
@@ -52,9 +53,12 @@
         <!-- AQUI VA EL CODIGO -->
         <div class="col-lg-12">
             <h2>Solución:</h2>
+            <br>
                 <p>
-                    
+                    Las figuras van girando 90°, alternan "piernas" en ángulo y en arco, y la cabeza. Cada 3 
+                    veces repite la figura, por esta razón, se deduce que la respuesta es la (C).
                 </p>
+            <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
             <a href="{% url 'razonamiento_abstracto_app:ejemplo2' %}" id="reiniciar1" class="btn btn-success">

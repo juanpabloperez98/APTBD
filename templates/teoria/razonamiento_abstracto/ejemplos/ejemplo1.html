@@ -36,8 +36,9 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #1</h2>
                 <p>
-                    
+                    ¿Qué figura continúa?
                 </p>
+                <img class="w-100 text-center" src="{% static 'Im/razonamientoabst/ejemplo1.jpg' %}" style="height: 300px;" alt="computer"><br><br>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
                         Solución
@@ -52,9 +53,12 @@
         <!-- AQUI VA EL CODIGO -->
         <div class="col-lg-12">
             <h2>Solución:</h2>
+            <br>
                 <p>
-                    
+                    Se observa que las figuras van aumentando dos segmentos a cada lado. Luego la respuesta es
+                    la (C).
                 </p>
+            <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
             <a href="{% url 'razonamiento_abstracto_app:ejemplo1' %}" id="reiniciar1" class="btn btn-success">

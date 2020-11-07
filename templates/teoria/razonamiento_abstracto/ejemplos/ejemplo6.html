@@ -36,8 +36,13 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #6</h2>
                 <p>
-                    
+                    En la figura se muestran dos posiciones del mismo cubo. ¿Cuál es el símbolo que se opone al
+                    círculo?
                 </p>
+                <div class="text-center">
+                    <img class="" src="{% static 'Im/razonamientoabst/ejemplo6.jpg' %}"
+                        style="height: 180px; width: 400;" alt="computer"><br><br>
+                </div>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
                         Solución
@@ -52,9 +57,15 @@
         <!-- AQUI VA EL CODIGO -->
         <div class="col-lg-12">
             <h2>Solución:</h2>
-                <p>
-                    
-                </p>
+            <br>
+            <p>
+                Se toma como figura referencial al cuadrado, ya que se repite en ambas posiciones. A su
+                alrededor, en cada una de sus esquinas se encuentran las otras cuatro figuras mostradas;
+                significando que frente a él, está el símbolo no mostrado en las figuras. Si en la 1ra
+                figura se toma como base el trángulo, "se esconde" al círculo y tengamos como figura
+                frontal al cuadrado. De modo que frente al círculo se encuentra el +.
+            </p>
+            <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
             <a href="{% url 'razonamiento_abstracto_app:ejemplo6' %}" id="reiniciar1" class="btn btn-success">
@@ -74,7 +85,7 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

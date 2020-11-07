@@ -36,8 +36,9 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #4</h2>
                 <p>
-                    
+                    ¿Qué figura no corresponde con las demás?
                 </p>
+                <img class="w-100 text-center" src="{% static 'Im/razonamientoabst/ejemplo4.jpg' %}" style="height: 180px;" alt="computer"><br><br>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
                         Solución
@@ -52,9 +53,13 @@
         <!-- AQUI VA EL CODIGO -->
         <div class="col-lg-12">
             <h2>Solución:</h2>
+            <br>
                 <p>
-                    
+                    La figura A, C, D y E son las fases correctas de una continuidad de desplazamiento por los 
+                    extremos y en sentido horario de los tres símbolos mostrados, mientras que la figura B no 
+                    corresponde.
                 </p>
+            <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
             <a href="{% url 'razonamiento_abstracto_app:ejemplo4' %}" id="reiniciar1" class="btn btn-success">
