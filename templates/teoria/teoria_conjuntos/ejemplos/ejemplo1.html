@@ -36,9 +36,13 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #1</h2>
                 <p>
-                    En un aula hay 60 alumnos de los cuales a 7 no les gusta ni geometría ni artimética y a 35
-                    solo les gusta la aritmética ¿A cuántos les gusta la geometría si a los que les gustan ambos
-                    cursos son 10?
+                    Determinar por comprensión cada uno de los siguientes conjuntos: <br><br>
+
+                    A = {1; 2; 3; 4; 5} <br>
+                    B = {a; e; i; o; u} <br>
+                    C = {2; 4; 6; 8; 10} <br>
+                    D = {1; 4; 9; 16} <br>
+                    E = {1; 8; 27; ...} 
                 </p>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
@@ -54,9 +58,20 @@
         <!-- AQUI VA EL CODIGO -->
         <div class="col-lg-12">
             <h2>Solución:</h2>
+            <br>
                 <p>
-                    
+                    Para determinar por comprensión se tiene que buscar una relación común característica a los
+                    elementos, por ejemplo, en el primer caso se trata de los números naturales (desde el 1 al 
+                    4), en el cuarto caso de los primeros números naturales al cuadrado ({1^2; 2^2; 3^2; 4^2}), 
+                    luego: <br><br>
+
+                    A = {x/x &#8712; N; 1 &#8804; x &#8804; 4} <br>
+                    B = {x/x es una vocal} <br>
+                    C = {2x/x &#8712; N; 1 &#8804; x &#8804; 5} &nbsp;->&nbsp; {x/x es un número par; 2 &#8804; x &#8804; 10} <br>
+                    D = {(x^2)/x &#8712; N; 1 &#8804; x &#8804; 4}
+                    E = {(x^3)/x &#8712; N; x &#8805; 1}
                 </p>
+            <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
             <a href="{% url 'teoria_conjuntos_app:ejemplo1' %}" id="reiniciar1" class="btn btn-success">
