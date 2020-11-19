@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplos.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplo_operadores/ejemplo1.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="/vectores#ejemplos">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+
+    <!-- ENUNCIADO -->
+    <div class="row mx-auto" id="enunciado-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            <div class="contenedor-enunciado">
+                <h2>TITULO</h2>
+                <p>
+                    Se tiene un vector de 5 posiciones, en la que cada posición tiene un valor específico, se requiere
+                    crear un algoritmo que dependiendo de dos posiciones ingresadas por el usuario, sume los valores que
+                    se encuentran en el vector en dichas posiciones.
+                </p>
+                <div class="boton">
+                    <a href="" id="start-btn" class="btn btn-success">
+                        Empezar
+                        <img class="ml-2" src="https://img.icons8.com/material-outlined/24/000000/start.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto desactivate" id="ejercicio-row" style="max-width: 1111px;">
+        <!-- AQUI VA EL CODIGO -->
+        <div class="col-lg-3" id="col-forms">
+            <form id="form">
+                <div class="form-group ej1 text-center">
+                    <label for="pos1">Posicion 1</label>
+                    <input type="text" class="form-control" id="pos1" placeholder="Posicion">
+                    <small id="num_materias" class="form-text text-muted">Ingrese la posición 1</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+
+            <form id="form2" class="desactivate">
+                <div class="form-group ej1 text-center" id="content1">
+                    <label for="pos2">Posicion 2</label>
+                    <input type="text" class="form-control" id="pos2" placeholder="Posicion">
+                    <small id="" class="form-text text-muted">Ingrese la posición 2</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+
+
+        <!--  -->
+        <div class="col-lg-2" id="content-info-var">
+            <p id="" style="font-family: RobotoCondensed-Regular;">Valores: <span class="" id="vector-span-0">
+                    [5,6,10,2,20]
+                </span>
+            </p>
+            <p id="p-hidden1" class="desactivate" style="font-family: RobotoCondensed-Regular;">Numero 1: <span class=""
+                    id="vector-span-1"></span></p>
+            <p id="p-hidden2" class="desactivate" style="font-family: RobotoCondensed-Regular;">Numero 2: <span class=""
+                    id="vector-span-2"></span></p>
+        </div>
+
+
+        <!--  -->
+        <div class="col-lg-7 text-center desactivate" id="content-operacion">
+            <p id="contenido">
+            </p>
+            <a href="#" id="showresutl" class="btn btn-success mb-2">Ver resultado</a>
+        </div>
+
+        <!--  -->
+        <div class="col-lg-3 text-center desactivate" id="content-resultado">
+            <h3>RESULTADO</h3>
+            <p id="result"></p>
+        </div>
+
+
+        <!--  -->
+        <div class="col-lg-12 desactivate text-center" id="content-reset">
+            <a href="#" id="reiniciar1" class="btn btn-success">
+                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+        </div>
+    </div>
+
+
+</main>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $('#start-btn').on('click', (e) => {
+        e.preventDefault()
+        $('#enunciado-row').addClass('desactivate')
+        $('#ejercicio-row').removeClass('desactivate')
+    })
+
+    const validar_null_input = (valor) => {
+        return valor && !isNaN(valor) && valor >= 1 && valor <= 5 ? true : false
+    }
+
+
+    var valor = 0,
+        valor2 = 0,
+        valores = [5,6,10,2,20]
+
+    var OpenOperacion = () => {
+        $('#content-operacion').toggle('explode')
+        nodo_before = document.getElementById('showresutl')
+        var element = ""
+        element = 'Valores[Numero 1] + Valores[Numero 2]'
+        $('#contenido').text(element)
+    }
+
+
+
+    $('#form').submit(function (e) {
+        e.preventDefault()
+        valor = parseInt($('#pos1').val())
+
+        if (validar_null_input(valor)) {
+            $('#form').toggle('fold')
+            $('#form2').toggle('fold')
+            $('#vector-span-1').text(valor)
+            $('#p-hidden1').toggle('explode')
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+    $('#form2').submit(function (e) {
+        e.preventDefault()
+        valor2 = parseInt($('#pos2').val())
+
+        if (validar_null_input(valor2)) {
+            $('#col-forms').toggle('explode')
+            $('#vector-span-2').text(valor2)
+            $('#p-hidden2').toggle('explode')
+            OpenOperacion()
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+    
+    $('#showresutl').on('click', function (e) {
+        e.preventDefault()
+        $('#showresutl').toggle('fold')
+        $('#content-resultado').toggle('fold')
+        var prom = valores[valor] + valores[valor2];
+        document.getElementById('result').innerHTML = prom
+        $('#content-reset').toggle('fold')
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
+        e.preventDefault()
+        location.reload()
+    })
+</script>
+{% endblock scripts %}

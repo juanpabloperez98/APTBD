@@ -83,7 +83,7 @@
 </section>
 <section id="slider">
     <div class="row mx-auto">
-        <div class="col-lg-12 introduction" style="margin: 30px auto 30px auto;">
+        <div class="col-lg-12 introduction" id="ejemplos" style="margin: 30px auto 30px auto;">
             <h1>Ejemplos</h1>
             <p>
                 En los ejemplos que se muestran a continuación, se presenta la forma en la que se usan e 
@@ -108,7 +108,7 @@
                             <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
                         </div>
                         <div class="boton">
-                            <a href="#">Ir al ejemplo</a>
+                            <a href="{% url 'matrices_app:ejemplo1' %}">Ir al ejemplo</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -118,7 +118,7 @@
                             <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
                         </div>
                         <div class="boton">
-                            <a href="#">Ir al ejemplo</a>
+                            <a href="{% url 'matrices_app:ejemplo2' %}">Ir al ejemplo</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -128,41 +128,31 @@
                             <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
                         </div>
                         <div class="boton">
-                            <a href="#">Ir al ejemplo</a>
+                            <a href="{% url 'matrices_app:ejemplo3' %}">Ir al ejemplo</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="row mx-auto mt-3">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 mx-auto">
                         <h3>Ejemplo #4</h3>
                         <hr style="width: 80%; margin: auto;">
                         <div style="width: 70%; margin: auto;">
                             <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
                         </div>
                         <div class="boton">
-                            <a href="#">Ir al ejemplo</a>
+                            <a href="{% url 'matrices_app:ejemplo4' %}">Ir al ejemplo</a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 mx-auto">
                         <h3>Ejemplo #5</h3>
                         <hr style="width: 80%; margin: auto;">
                         <div style="width: 70%; margin: auto;">
                             <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
                         </div>
                         <div class="boton">
-                            <a href="#">Ir al ejemplo</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <h3>Ejemplo #6</h3>
-                        <hr style="width: 80%; margin: auto;">
-                        <div style="width: 70%; margin: auto;">
-                            <img src="{% static 'Im/games-port.jpg' %}" alt="image-module" width="100%">
-                        </div>
-                        <div class="boton">
-                            <a href="#">Ir al ejemplo</a>
+                            <a href="{% url 'matrices_app:ejemplo5' %}">Ir al ejemplo</a>
                         </div>
                     </div>
                 </div>

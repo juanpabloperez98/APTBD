@@ -28,6 +28,11 @@ main {
     border-radius: 10px;
 }
 
+
+#table1 tr td{
+    border: 1px solid;
+}
+
 /* OPERADORES */
 
 /* EJMPLOS 1 */

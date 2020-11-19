@@ -53,37 +53,41 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-                <p>
-                    x= primer número <br>
-                    y= segundo número <br>
-                    Los números suman 25: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + y = 25 <br><br>
-
-                    El doble de uno de los números es 14: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;2x = 14 <br><br>
-
-                    Se tiene el siguiente sistema: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp; x + y = 25 <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;2x     = 14 <br><br>
-
-                    Se aplica sustitución: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;2x = 14 &nbsp;->&nbsp; x = (14/2) = 7 <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + y = 25 &nbsp;->&nbsp; 7 + y = 25 &nbsp;->&nbsp; y = 25 - 7 = 18 <br><br>
-
-                    Por lo tanto: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;x = 7 <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;y = 18
-                </p>
+            <p>
+                x= primer número <br>
+                y= segundo número <br>
+                Los números suman 25: <br><br>
+            </p>
+            <p id="2" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x + y = 25 <br><br>
+            </p>
+            <p id="3" class="desactivate"> El doble de uno de los números es 14: <br><br></p>
+            <p id="4" class="desactivate"> &nbsp;&nbsp;&nbsp;&nbsp;2x = 14 <br><br></p>
+            <p id="5" class="desactivate"> Se tiene el siguiente sistema: <br><br></p>
+            <p id="6" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp; x + y = 25 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2x = 14 <br><br>
+            </p>
+            <p id="7" class="desactivate">
+                Se aplica sustitución: <br><br>
+            </p>
+            <p id="8" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;2x = 14 &nbsp;->&nbsp; x = (14/2) = 7 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;x + y = 25 &nbsp;->&nbsp; 7 + y = 25 &nbsp;->&nbsp; y = 25 - 7 = 18 <br><br>
+            </p>
+            <p id="9" class="desactivate">
+                Por lo tanto: <br><br>
+            </p>
+            <p id="10" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x = 7 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;y = 18
+            </p>
             <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
-            <a href="{% url 'sistemas_ecuaciones_app:ejemplo1' %}" id="reiniciar1" class="btn btn-success">
-                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+            <a href="#" id="sigt" class="btn btn-success">Siguiente</a>
+            <a href="{% url 'sistemas_ecuaciones_app:ejemplo1' %}" id="reiniciar1"
+                class="btn btn-success desactivate"><i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
         </div>
     </div>
 </main>
@@ -99,7 +103,23 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    var cont = 1
+
+    $('#sigt').on('click', (e) => {
+        e.preventDefault()
+        cont++
+        var id = '#' + cont
+        if (cont != 10) {
+            $(id).toggle('explode')
+        } else {
+            $(id).toggle('explode')
+            $('#sigt').toggle('explode')
+            $('#reiniciar1').toggle('explode')
+        }
+
+    })
+
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

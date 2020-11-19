@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplos.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilos/ejemplo_operadores/ejemplo1.css' %}">
+{% endblock styles %}
+
+{% block headers %}
+<nav class="navbar navbar-expand-lg animate__animated animate__bounceInLeft">
+    <a class="navbar-brand" href="#" id="main-logo">
+        <img src="{% static 'Im/UTP_sin_nombre.png' %}" alt="logo">
+        APBTD
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ul-nav">
+            <li class="nav-item li-hidden">
+                <a class="nav-link" style="--animate-duration: 500ms;" href="/matrices#ejemplos">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill mr-2"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                    </svg>Volver</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock headers %}
+
+{% block content %}
+<main>
+
+    <!-- ENUNCIADO -->
+    <div class="row mx-auto" id="enunciado-row" style="max-width: 1111px;">
+        <div class="col-lg-12">
+            <div class="contenedor-enunciado">
+                <h2>TITULO</h2>
+                <p>
+                    En un sector de la ciudad un edificio se encuentra incendiándose, el edificio cuenta con 4 pisos, en
+                    los cuales en cada piso hay 4 apartamentos, el alcalde de la ciudad se encuentra atrapado en el piso
+                    4, apartamento 2. Se necesita crear un simulador en el cual se le pida a un usuario el piso y
+                    apartamento y valide si es el piso y apartamento en el que se encuentra el alcalde
+                </p>
+                <div class="boton">
+                    <a href="" id="start-btn" class="btn btn-success">
+                        Empezar
+                        <img class="ml-2" src="https://img.icons8.com/material-outlined/24/000000/start.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-auto desactivate" id="ejercicio-row" style="max-width: 1111px;">
+        <!-- AQUI VA EL CODIGO -->
+        <div class="col-lg-3" id="col-forms">
+            <form id="form">
+                <div class="form-group ej1 text-center">
+                    <label for="piso">Piso</label>
+                    <input type="text" class="form-control" id="piso" placeholder="Piso">
+                    <small id="fila" class="form-text text-muted">Ingrese el piso del edificio</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+
+            <form id="form2" class="desactivate">
+                <div class="form-group ej1 text-center" id="">
+                    <label for="apt">Apartamento</label>
+                    <input type="text" class="form-control" id="apt" placeholder="Apartamento">
+                    <small id="" class="form-text text-muted">Ingrese el apartamento (1-4)</small>
+                </div>
+                <div class="bton text-center">
+                    <button type="submit" class="btn btn-success">INGRESAR</button>
+                </div>
+            </form>
+        </div>
+
+
+        <!--  -->
+        <div class="col-lg-3" id="content-info-var">
+            <div id="content-vars-1" class="desactivate">
+                <p id="" style="font-family: RobotoCondensed-Regular;">Piso <span class="" id="piso-span-0"></span>
+                </p>
+                <p id="" style="font-family: RobotoCondensed-Regular;">Apartamento <span class=""
+                        id="apto-span-0"></span>
+                </p>
+            </div>
+            <div id="content-matriz" class="desactivate">
+                <span style="font-family: RobotoCondensed-Regular;">Edificio:</span>
+                <table class="table">
+                    <tbody id="table1">
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">4</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">4</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">4</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td class="text-center">2</td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="col-lg-7 desactivate" id="content-operacion">
+            <p>
+                if(Edificio[Piso-1][Apartamento-1] == Edificio[4][2]){ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El alcalde se encuentra en ese apartamento<br>
+                }else{ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El alcalde no se encuentra en ese apartamento<br>
+                } <br>
+            </p>
+            <a href="#" id="showresutl" class="btn btn-success mb-2 mx-auto" style="display: block; width: 40%;">Ver
+                resultado</a>
+        </div>
+
+        <!--  -->
+        <div class="col-lg-2 text-center desactivate" id="content-resultado">
+            <h3>RESULTADO</h3>
+            <p id="result"></p>
+        </div>
+
+
+        <!--  -->
+        <div class="col-lg-12 desactivate text-center" id="content-reset">
+            <a href="#" id="reiniciar1" class="btn btn-success">
+                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+        </div>
+    </div>
+
+
+</main>
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+    $('#start-btn').on('click', (e) => {
+        e.preventDefault()
+        // $('#enunciado-row').toggle('explode')
+        $('#enunciado-row').addClass('desactivate')
+        // $('#ejercicio-row').toggle('explode')
+        $('#ejercicio-row').removeClass('desactivate')
+    })
+
+    const validar_null_input = (valor) => {
+        return !isNaN(valor) && valor >= 1 && valor <= 4 ? true : false
+    }
+
+
+    var fila1 = 0,
+        columna1 = 0
+
+
+    $('#form').submit(function (e) {
+        e.preventDefault()
+        fila1 = parseInt($('#piso').val())
+
+        if (validar_null_input(fila1)) {
+            $('#form').toggle('explode')
+            $('#form2').toggle('explode')
+            $('#piso-span-0').text(fila1)
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+    $('#form2').submit(function (e) {
+        e.preventDefault()
+        columna1 = parseInt($('#apt').val())
+
+        if (validar_null_input(columna1)) {
+            $('#apto-span-0').text(columna1)
+            $('#content-vars-1').toggle('explode')
+            $('#content-matriz').toggle('explode')
+            $('#content-operacion').toggle('explode')
+            $('#col-forms').toggle('explode')
+        } else {
+            alertify.set('notifier', 'position', 'bottom-center');
+            var msg = alertify.error('Valor no valido');
+            msg.delay(1.3)
+        }
+    })
+
+    $('#showresutl').on('click', function (e) {
+        e.preventDefault()
+        $('#showresutl').toggle('fold')
+        $('#content-resultado').toggle('fold')
+
+
+        if(fila1-1 == 3 && columna1-1 == 1){
+            valor = "El alcalde se encuentra en ese apartamento"
+        }else{
+            valor = "El alcalde NO se encuentra en ese apartamento"
+        }
+
+        document.getElementById('result').innerHTML = valor
+        $('#content-reset').toggle('fold')
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
+        e.preventDefault()
+        location.reload()
+    })
+</script>
+{% endblock scripts %}
