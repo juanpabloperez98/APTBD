@@ -36,9 +36,9 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #4</h2>
                 <p>
-                    Pablo tomó avena y/o café al desayuno cada mañana durante un mes de verano, este posee el 
+                    Pablo tomó avena y/o café al desayuno cada mañana durante un mes de verano, este posee el
                     menor número de días en el año 2000 debido a que dicho año fue bisiesto. Si tomó avena 23
-                    mañanas y café 17 mañanas ¿Cuántos días tomó avena y café? 
+                    mañanas y café 17 mañanas ¿Cuántos días tomó avena y café?
                 </p>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
@@ -55,23 +55,27 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-                <p>
-                    Como el año 2000 fue bisiesto, luego el mes con el menor número de días será febrero, el 
-                    cual tiene 29 días, luego, se tendrá que como se desea calcular qué día tomó avena y café, 
-                    es decir, los dos el mismo día, lo que se está calculando es la intersección. Para hallar
-                    esta intersección, se debe tener en cuenta que a cada conjunto se le debe restar el número
-                    de días en que consumió ambas cosas, entonces se observa que: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp; 23 - x + x + 17 - x = 29 &nbsp;->&nbsp; 40 - 29 = x &nbsp;->&nbsp; x = 11 <br><br>
-
-                    Por lo que se concluye que fueron 11 días en los que Pablo tomó avena y café en una sola 
-                    mañana.
-                </p>
+            <p id="1" class="p-active">
+                Como el año 2000 fue bisiesto, luego el mes con el menor número de días será febrero, el
+                cual tiene 29 días, luego, se tendrá que como se desea calcular qué día tomó avena y café,
+                es decir, los dos el mismo día, lo que se está calculando es la intersección. Para hallar
+                esta intersección, se debe tener en cuenta que a cada conjunto se le debe restar el número
+                de días en que consumió ambas cosas, entonces se observa que: <br><br>
+            </p>
+            <p id="2" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp; 23 - x + x + 17 - x = 29 &nbsp;->&nbsp; 40 - 29 = x &nbsp;->&nbsp; x = 11
+                <br><br>
+            </p>
+            <p id="3" class="desactivate">
+                Por lo que se concluye que fueron 11 días en los que Pablo tomó avena y café en una sola
+                mañana.
+            </p>
             <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
-            <a href="{% url 'teoria_conjuntos_app:ejemplo4' %}" id="reiniciar1" class="btn btn-success">
-                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+            <a href="#" id="sigt" class="btn btn-success">Siguiente</a>
+            <a href="{% url 'sistemas_ecuaciones_app:ejemplo1' %}" id="reiniciar1"
+                class="btn btn-success desactivate"><i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
         </div>
     </div>
 </main>
@@ -87,7 +91,30 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    var cont = 1
+
+    $('#sigt').on('click', (e) => {
+        e.preventDefault()
+        cont++
+        var id = '#' + cont,
+            id_before = '#' + (cont - 1)
+        if (cont != 3) {
+            $(id).toggle('explode')
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+        } else {
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+            $(id).toggle('explode')
+            $('#sigt').toggle('explode')
+            $('#reiniciar1').toggle('explode')
+        }
+
+    })
+
+
+
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

@@ -53,7 +53,7 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-            <p>
+            <p id="1" class="p-active">
                 x= primer número <br>
                 y= segundo número <br>
                 Los números suman 25: <br><br>
@@ -108,10 +108,15 @@
     $('#sigt').on('click', (e) => {
         e.preventDefault()
         cont++
-        var id = '#' + cont
+        var id = '#' + cont,
+            id_before = '#'+(cont-1)
         if (cont != 10) {
             $(id).toggle('explode')
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
         } else {
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
             $(id).toggle('explode')
             $('#sigt').toggle('explode')
             $('#reiniciar1').toggle('explode')

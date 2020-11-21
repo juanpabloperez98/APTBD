@@ -57,25 +57,31 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-                <p>
-                    Dado que se trata de conjuntos unitarios; entonces: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp; a - b = 3 	&#8743; ab = 54 &nbsp;->&nbsp; ab = 9 x 6 <br><br>
-
-                    Tanteando adecuadamente, se deducirpa que: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp; a = 9 <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp; b = 6 <br><br>
-
-                    Se pide: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp; a + b = 9 + 6 = 15
-                </p>
+            <p id="1" class="p-active">
+                Dado que se trata de conjuntos unitarios; entonces: <br><br>
+            </p>
+            <p id="2" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp; a - b = 3 &#8743; ab = 54 &nbsp;->&nbsp; ab = 9 x 6 <br><br>
+            </p>
+            <p id="3" class="desactivate">
+                Tanteando adecuadamente, se deducirpa que: <br><br>
+            </p>
+            <p id="4" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp; a = 9 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; b = 6 <br><br>
+            </p>
+            <p id="5" class="desactivate">
+                Se pide: <br><br>
+            </p>
+            <p id="6" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp; a + b = 9 + 6 = 15
+            </p>
             <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
-            <a href="{% url 'teoria_conjuntos_app:ejemplo2' %}" id="reiniciar1" class="btn btn-success">
-                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+            <a href="#" id="sigt" class="btn btn-success">Siguiente</a>
+            <a href="{% url 'sistemas_ecuaciones_app:ejemplo1' %}" id="reiniciar1"
+                class="btn btn-success desactivate"><i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
         </div>
     </div>
 </main>
@@ -91,7 +97,29 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    var cont = 1
+
+    $('#sigt').on('click', (e) => {
+        e.preventDefault()
+        cont++
+        var id = '#' + cont,
+            id_before = '#' + (cont - 1)
+        if (cont != 6) {
+            $(id).toggle('explode')
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+        } else {
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+            $(id).toggle('explode')
+            $('#sigt').toggle('explode')
+            $('#reiniciar1').toggle('explode')
+        }
+
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

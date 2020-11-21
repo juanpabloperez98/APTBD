@@ -36,7 +36,7 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #6</h2>
                 <p>
-                    De 162 vendedores ambulantes, 60 venden camisas y blusas, 40 camisas y pañuelos, 50 blusas y 
+                    De 162 vendedores ambulantes, 60 venden camisas y blusas, 40 camisas y pañuelos, 50 blusas y
                     pañuelos, 42 venden solo una clase de dichas prendas. ¿Cuántos ambulantes venden por lo menos
                     tres tipos de prendas?
                 </p>
@@ -55,30 +55,38 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-                <p>
-                    Se sabe que: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + y + z = 42 <br><br>
-
-                    Ahora se necesita hallar la intersección entre los tres conjuntos de prendas para saber 
-                    cuántos ambulantes venden po lo menos los tres tipos. Por esta razón, se deben hallar los
-                    subconjuntos que no toman en cuenta la intersección, así resulta que: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp; -> 60 - a <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp; -> 40 - a <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp; -> 50 - a <br><br>
-
-                    Luego, considerando el total se tiene que: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp; x + y + z + 60 -a + 40 - a + 50 - a + a = 162 &nbsp;->&nbsp; 42 + 150 - 2a = 162 &nbsp;->&nbsp; 192 - 162 = 2a &nbsp;->&nbsp; 30 = 2a &nbsp;->&nbsp; a = 15 <br><br>
-
-                    En conclusión, son 15 los ambulantes que venden por lo menos tres tipos de prendas.
-                </p>
+            <p id="1" class="p-active">
+                Se sabe que: <br><br>
+            </p>
+            <p id="2" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x + y + z = 42 <br><br>
+            </p>
+            <p id="3" class="desactivate">
+                Ahora se necesita hallar la intersección entre los tres conjuntos de prendas para saber
+                cuántos ambulantes venden po lo menos los tres tipos. Por esta razón, se deben hallar los
+                subconjuntos que no toman en cuenta la intersección, así resulta que: <br><br>
+            </p>
+            <p id="4" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp; -> 60 - a <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; -> 40 - a <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; -> 50 - a <br><br>
+            </p>
+            <p id="5" class="desactivate">
+                Luego, considerando el total se tiene que: <br><br>
+            </p>
+            <p id="6" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp; x + y + z + 60 -a + 40 - a + 50 - a + a = 162 &nbsp;->&nbsp; 42 + 150 - 2a =
+                162 &nbsp;->&nbsp; 192 - 162 = 2a &nbsp;->&nbsp; 30 = 2a &nbsp;->&nbsp; a = 15 <br><br>
+            </p>
+            <p id="7" class="desactivate">
+                En conclusión, son 15 los ambulantes que venden por lo menos tres tipos de prendas.
+            </p>
             <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
-            <a href="{% url 'teoria_conjuntos_app:ejemplo6' %}" id="reiniciar1" class="btn btn-success">
-                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+            <a href="#" id="sigt" class="btn btn-success">Siguiente</a>
+            <a href="{% url 'sistemas_ecuaciones_app:ejemplo1' %}" id="reiniciar1"
+                class="btn btn-success desactivate"><i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
         </div>
     </div>
 </main>
@@ -94,7 +102,29 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    var cont = 1
+
+    $('#sigt').on('click', (e) => {
+        e.preventDefault()
+        cont++
+        var id = '#' + cont,
+            id_before = '#' + (cont - 1)
+        if (cont != 7) {
+            $(id).toggle('explode')
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+        } else {
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+            $(id).toggle('explode')
+            $('#sigt').toggle('explode')
+            $('#reiniciar1').toggle('explode')
+        }
+    })
+
+
+
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

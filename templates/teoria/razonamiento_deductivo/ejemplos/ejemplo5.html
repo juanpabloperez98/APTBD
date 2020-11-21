@@ -36,9 +36,9 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #5</h2>
                 <p>
-                    Imagínese usted un reloj de pared. Escoja 2 números y enciérrelos mediante un solo trazo, 
+                    Imagínese usted un reloj de pared. Escoja 2 números y enciérrelos mediante un solo trazo,
                     de modo que cada par de números encerrados sumen 19. ¿Cuántos números del reloj no podrán
-                    encerrarse? 
+                    encerrarse?
                 </p>
                 <div class="boton">
                     <a href="" id="start-btn" class="btn btn-success">
@@ -55,19 +55,23 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-                <p>
-                    Los números encerrados son: <br><br>
-
-                    - 9 con 10. <br>
-                    - 8 con 11. <br>
-                    - 7 con 12. <br><br>
-
-                    Quedando sueltos los números 1, 2, 3, 4, 5 y 6.
-                </p><br>
+            <p id="1" class="p-active">
+                Los números encerrados son: <br><br>
+            </p>
+            <p id="2" class="desactivate">
+                - 9 con 10. <br>
+                - 8 con 11. <br>
+                - 7 con 12. <br><br>
+            </p>
+            <p id="3" class="desactivate">
+                Quedando sueltos los números 1, 2, 3, 4, 5 y 6.
+            </p>
+            <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
-            <a href="{% url 'razonamiento_deductivo_app:ejemplo5' %}" id="reiniciar1" class="btn btn-success">
-                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+            <a href="#" id="sigt" class="btn btn-success">Siguiente</a>
+            <a href="{% url 'sistemas_ecuaciones_app:ejemplo1' %}" id="reiniciar1"
+                class="btn btn-success desactivate"><i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
         </div>
     </div>
 </main>
@@ -83,7 +87,29 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    var cont = 1
+
+    $('#sigt').on('click', (e) => {
+        e.preventDefault()
+        cont++
+        var id = '#' + cont,
+            id_before = '#' + (cont - 1)
+        if (cont != 3) {
+            $(id).toggle('explode')
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+        } else {
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+            $(id).toggle('explode')
+            $('#sigt').toggle('explode')
+            $('#reiniciar1').toggle('explode')
+        }
+
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

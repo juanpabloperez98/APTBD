@@ -36,7 +36,7 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #2</h2>
                 <p>
-                    Tenemos dos números cuya suma es 0 y si a uno de ellos le sumamos 123 obtenemos el doble 
+                    Tenemos dos números cuya suma es 0 y si a uno de ellos le sumamos 123 obtenemos el doble
                     del otro. ¿Qué números son?
                 </p>
                 <div class="boton">
@@ -54,40 +54,58 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-                <p>
-                    x= primer número <br>
-                    y= segundo número <br>
-                    La suma de los números es 0: <br><br>
-                    
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + y = 0 <br><br>
+            <p>
 
-                    Si al primero le sumamos 123 obtenemos el doble del segundo: <br><br>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + 123 = 2y <br><br>
+            <p id="1" class="p-active">
+                x= primer número <br>
+                y= segundo número <br>
+                La suma de los números es 0: <br><br>
+            </p>
+            <p id="2" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x + y = 0 <br><br>
+            </p>
+            <p id="3" class="desactivate">
+                Si al primero le sumamos 123 obtenemos el doble del segundo: <br><br>
+            </p>
+            <p id="4" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x + 123 = 2y <br><br>
 
-                    Tenemos el sistema: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + y = 0 <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + 123 = 2y <br><br>
-
-                    Realizando la sustitución: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + y = 0 &nbsp;->&nbsp; x = -y <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;x + 123 = 2y &nbsp;->&nbsp; x + 123 = -2x &nbsp;->&nbsp; -3x = 123 &nbsp;->&nbsp; x = -(123/3) = -41 <br><br>
-
-                    Entonces: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;x = -y &nbsp;->&nbsp; -y = -41 &nbsp;->&nbsp; y = 41 <br><br>
-
-                    Por lo tanto los números son: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;x = -41 <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;y = 41
-                </p>
+            </p>
+            <p id="5" class="desactivate">
+                Tenemos el sistema: <br><br>
+            </p>
+            <p id="6" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x + y = 0 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;x + 123 = 2y <br><br>
+            </p>
+            <p id="7" class="desactivate">
+                Realizando la sustitución: <br><br>
+            </p>
+            <p id="8" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x + y = 0 &nbsp;->&nbsp; x = -y <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;x + 123 = 2y &nbsp;->&nbsp; x + 123 = -2x &nbsp;->&nbsp; -3x = 123
+                &nbsp;->&nbsp; x
+                = -(123/3) = -41 <br><br>
+            </p>
+            <p id="9" class="desactivate">
+                Entonces: <br><br>
+            </p>
+            <p id="10" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x = -y &nbsp;->&nbsp; -y = -41 &nbsp;->&nbsp; y = 41 <br><br>
+            </p>
+            <p id="11" class="desactivate">
+                Por lo tanto los números son: <br><br>
+            </p>
+            <p id="12" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;x = -41 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;y = 41
+            </p>
             <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
-            <a href="{% url 'sistemas_ecuaciones_app:ejemplo2' %}" id="reiniciar1" class="btn btn-success">
+            <a href="#" id="sigt" class="btn btn-success">Siguiente</a>
+            <a href="{% url 'sistemas_ecuaciones_app:ejemplo2' %}" id="reiniciar1" class="btn btn-success desactivate">
                 <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
         </div>
     </div>
@@ -104,7 +122,28 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    var cont = 1
+
+    $('#sigt').on('click', (e) => {
+        e.preventDefault()
+        cont++
+        var id = '#' + cont,
+            id_before = '#' + (cont - 1)
+        if (cont != 12) {
+            $(id).toggle('explode')
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+        } else {
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+            $(id).toggle('explode')
+            $('#sigt').toggle('explode')
+            $('#reiniciar1').toggle('explode')
+        }
+
+    })
+
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

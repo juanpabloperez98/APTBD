@@ -36,8 +36,8 @@
             <div class="contenedor-enunciado">
                 <h2>Ejemplo #6</h2>
                 <p>
-                    En un concierto benéfico se venden todas las entradas y se recaudan 23 mil dólares. Los 
-                    precios de las entradas son 50 dólares las normales y 300 dólares las vip. Calcular el 
+                    En un concierto benéfico se venden todas las entradas y se recaudan 23 mil dólares. Los
+                    precios de las entradas son 50 dólares las normales y 300 dólares las vip. Calcular el
                     número de entradas vendidas de cada tipo si el aforo del establecimiento es de 160 personas.
                 </p>
                 <div class="boton">
@@ -55,46 +55,63 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-                <p>
-                    Llamaremos v al número de entradas vip y n al número de entradas normales (no importa el 
-                    nombre que le demos a las incógnitas). El número total de entradas coincide con el número 
-                    total de personas: <br><br>
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;v + n = 160 <br><br>
-
-                    La recaudación es: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;300v + 50n = 23000 <br><br>
-
-                    Resolvemos el sistema de ecuaciones por igualación. Para ello aislamos v en ambas 
-                    ecuaciones: <br>
-
-                    De la primera ecuación: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;v = 160 − n <br><br>
-
-                    De la segunda ecuación: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;v = (23000 − 50n)/300 <br><br>
-
-                    Igualamos ambas expresiones: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;160 − n = (23000 − 50n)/300 <br><br>
-
-                    La solución de la ecuación de primer grado anterior es: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;n = 100 <br><br>
-                    
-                    Entonces: <br><br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;v = 160 − 100 = 60 <br><br>
-
-                    Por tanto, se vendieron 60 entradas vip y 100 normales.
-                </p>
+            <p id="1" class="p-active">
+                Llamaremos v al número de entradas vip y n al número de entradas normales (no importa el
+                nombre que le demos a las incógnitas). El número total de entradas coincide con el número
+                total de personas: <br><br>
+            </p>
+            <p id="2" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;v + n = 160 <br><br>
+            </p>
+            <p id="3" class="desactivate">
+                La recaudación es: <br><br>
+            </p>
+            <p id="4" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;300v + 50n = 23000 <br><br>
+            </p>
+            <p id="5" class="desactivate">
+                Resolvemos el sistema de ecuaciones por igualación. Para ello aislamos v en ambas
+                ecuaciones: <br>
+            </p>
+            <p id="6" class="desactivate">
+                De la primera ecuación: <br><br>
+            </p>
+            <p id="7" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;v = 160 − n <br><br>
+            </p>
+            <p id="8" class="desactivate">
+                De la segunda ecuación: <br><br>
+            </p>
+            <p id="9" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;v = (23000 − 50n)/300 <br><br>
+            </p>
+            <p id="10" class="desactivate">
+                Igualamos ambas expresiones: <br><br>
+            </p>
+            <p id="11" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;160 − n = (23000 − 50n)/300 <br><br>
+            </p>
+            <p id="12" class="desactivate">
+                La solución de la ecuación de primer grado anterior es: <br><br>
+            </p>
+            <p id="13" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;n = 100 <br><br>
+            </p>
+            <p id="14" class="desactivate">
+                Entonces: <br><br>
+            </p>
+            <p id="15" class="desactivate">
+                &nbsp;&nbsp;&nbsp;&nbsp;v = 160 − 100 = 60 <br><br>
+            </p>
+            <p id="16" class="desactivate">
+                Por tanto, se vendieron 60 entradas vip y 100 normales.
+            </p>
             <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
-            <a href="{% url 'sistemas_ecuaciones_app:ejemplo6' %}" id="reiniciar1" class="btn btn-success">
+            <a href="#" id="sigt" class="btn btn-success">Siguiente</a>
+            <a href="{% url 'sistemas_ecuaciones_app:ejemplo3' %}" id="reiniciar1" class="btn btn-success desactivate">
                 <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
         </div>
     </div>
@@ -111,7 +128,28 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    var cont = 1
+
+    $('#sigt').on('click', (e) => {
+        e.preventDefault()
+        cont++
+        var id = '#' + cont,
+            id_before = '#' + (cont - 1)
+        if (cont != 16) {
+            $(id).toggle('explode')
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+        } else {
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+            $(id).toggle('explode')
+            $('#sigt').toggle('explode')
+            $('#reiniciar1').toggle('explode')
+        }
+    })
+
+
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

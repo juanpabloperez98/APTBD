@@ -54,19 +54,23 @@
         <div class="col-lg-12">
             <h2>Solución:</h2>
             <br>
-                <p>
-                    A la que tiene el tono de voz más alto la ponemos arriba: <br><br>
-
-                    1. Celia <br>
-                    2. Rosa  <br>
-                    3. Ángela <br><br>
-
-                    Por ende, el tono de voz de Ángela es más bajo que el de Celia.
-                </p><br>
+            <p id="1" class="p-active">
+                A la que tiene el tono de voz más alto la ponemos arriba: <br><br>
+            </p>
+            <p id="2" class="desactivate">
+                1. Celia <br>
+                2. Rosa <br>
+                3. Ángela <br><br>
+            </p>
+            <p id="3" class="desactivate">
+                Por ende, el tono de voz de Ángela es más bajo que el de Celia.
+            </p>
+            <br>
         </div>
         <div class="col-lg-12 text-center" id="content-reset">
-            <a href="{% url 'razonamiento_deductivo_app:ejemplo2' %}" id="reiniciar1" class="btn btn-success">
-                <i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
+            <a href="#" id="sigt" class="btn btn-success">Siguiente</a>
+            <a href="{% url 'sistemas_ecuaciones_app:ejemplo1' %}" id="reiniciar1"
+                class="btn btn-success desactivate"><i class="fas fa-undo-alt mr-2"></i>Reiniciar</a>
         </div>
     </div>
 </main>
@@ -82,7 +86,30 @@
         $('#ejercicio-row').removeClass('desactivate')
     })
 
-    $('#reiniciar1').on('click',(e) => {
+    var cont = 1
+
+    $('#sigt').on('click', (e) => {
+        e.preventDefault()
+        cont++
+        var id = '#' + cont,
+            id_before = '#' + (cont - 1)
+        if (cont != 3) {
+            $(id).toggle('explode')
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+        } else {
+            $(id).addClass('p-active')
+            $(id_before).removeClass('p-active')
+            $(id).toggle('explode')
+            $('#sigt').toggle('explode')
+            $('#reiniciar1').toggle('explode')
+        }
+
+    })
+
+
+
+    $('#reiniciar1').on('click', (e) => {
         e.preventDefault()
         location.reload()
     })

@@ -7,3 +7,7 @@ main div #second-content::after {
     width: 300px !important;
     margin: auto;
 }
+
+#second-content{
+    text-align: center !important;
+}
