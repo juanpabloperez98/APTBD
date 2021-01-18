@@ -127,7 +127,7 @@
     })
 
     const validar_null_input = (valor) => {
-        return valor && !isNaN(valor) && valor >= 1 && valor <= 5 ? true : false
+        return !isNaN(valor) && valor >= 0 && valor <= 4 ? true : false
     }
 
 
@@ -148,7 +148,6 @@
     $('#form').submit(function (e) {
         e.preventDefault()
         valor = parseInt($('#pos1').val())
-
         if (validar_null_input(valor)) {
             $('#form').toggle('fold')
             $('#form2').toggle('fold')

@@ -174,7 +174,7 @@
             $('#puntos').text('Puntos: ' + puntos)
             document.getElementById('codigo').innerHTML += '<br><span style="color:blue">Fruta capturada</span>'
             alertify.set('notifier', 'position', 'top-center');
-            var msg = alertify.success('Fruta capturada');
+            var msg = alertify.error('Dato no valido');
             msg.delay(1.3)
 
             moveX = Math.round(Math.random() * 533)

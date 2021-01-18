@@ -48,6 +48,14 @@ main div .principal-content .main-botones a#teoria {
     margin-left: 30px;
 }
 
+.carousel-control-prev .carousel-control-prev-icon, .carousel-control-next .carousel-control-next-icon {
+    padding: 20px;
+    background-color: black;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
 /* Section1 */
 
 #section1 {
@@ -117,32 +125,33 @@ main div .principal-content .main-botones a#teoria {
     margin: 30px auto auto auto;
 }
 
-#carouselExampleIndicators{
+#carouselExampleIndicators {
     /* background-color: rebeccapurple; */
     padding-bottom: 30px;
 }
 
-.carousel-inner .carousel-item .row div{
+.carousel-inner .carousel-item .row div {
     padding: 10px;
 }
 
-.carousel-inner .carousel-item .row div h3{
+.carousel-inner .carousel-item .row div h3 {
     font-size: 25px;
     text-align: center;
 }
-.carousel-inner .carousel-item .row div p{
+
+.carousel-inner .carousel-item .row div p {
     font-family: "RobotoCondensed-Regular";
     width: 70%;
     margin: auto;
 }
 
-.carousel-inner .carousel-item .row div .boton{
+.carousel-inner .carousel-item .row div .boton {
     width: 80%;
     margin: auto;
     text-align: center;
 }
 
-.carousel-inner .carousel-item .row div a{
+.carousel-inner .carousel-item .row div a {
     display: inline-block;
     padding: 10px;
     color: white;
@@ -150,9 +159,10 @@ main div .principal-content .main-botones a#teoria {
     background-color: #2180c3;
 }
 
-.img_cont img{
+.img_cont img {
     height: 160px;
 }
+
 /* #slider .slider {
     background-color: blue;
     width: 80%;
